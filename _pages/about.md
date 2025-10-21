@@ -1,8 +1,8 @@
 ---
 layout: about
-title: About Me
+title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Post-doctoral Research Fellow at <a href='https://mox.polimi.it/'> MOX - MOX, Politecnico di Milano</a> • Affiliated with <a href='https://www.iit.it/it/home'>IIT </a> • <em>"I'm Winston Wolf, I solve problems"</em>
 
 profile:
   align: right
@@ -33,15 +33,14 @@ Put your address / P.O. box / other info right below your picture. You can also 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
+Hello, I'm **Vincenzo Di Florio**, a physicist passionate about connecting **theoretical models** with **computational innovation**.  
+I hold a **Master’s degree in Physics of Complex Systems** and a **Ph.D. in Mathematical Physics**, combining **analytical rigor**, **numerical modeling**, and **physical intuition**.
 
-Hello, I'm **Vincenzo Di Florio**, a physicist passionate about bridging theoretical models and computational innovation.  
-I hold a **Master’s degree in Physics of Complex Systems** and a **Ph.D. in Mathematical Physics**, with a research background that blends analytical insight, numerical modeling, and physical intuition.
+My research focuses on the **electrostatics of macromolecules in electrolytic solutions** and the **thermodynamics of non-equilibrium systems**.  
+During my doctoral and postdoctoral work, I developed **NextGenPB**, a next-generation computational framework for solving complex electrostatic problems in biomolecular environments with high precision and efficiency.
 
-My expertise lies in the **electrostatics of macromolecules in electrolytic solutions** and the **thermodynamics of non-equilibrium systems**.  
-During my doctoral and postdoctoral work, I developed **NextGenPB**, an advanced computational framework for solving electrostatic problems in biomolecular systems with high accuracy and efficiency.
+Beyond academia, I’m motivated by the challenge of transforming physical theory into **robust, scalable, and versatile computational tools**. I enjoy integrating **C++, Python, and MATLAB-like workflows** to design **adaptive mesh solvers**, **data-driven models**, and **high-performance simulations**.
 
-Beyond academic research, I am driven by the challenge of transforming physical theory into robust, scalable computational tools. I enjoy integrating **C++, Python, and MATLAB-like workflows** to design adaptive mesh solvers and high-performance simulations.
+I’m always eager to collaborate across disciplines—where **physics meets computation**, and **ideas become algorithms**.
 
-I am always eager to collaborate across disciplines—where physics meets computation, and ideas become algorithms.
-
-Check out my [publications](/publications/) or visit my [GitHub](https://github.com/vdiflorio) for current projects.
+Feel free to explore my [publications](/publications/) or visit my [GitHub](https://github.com/vdiflorio) for current projects and code.
