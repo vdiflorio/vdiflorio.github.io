@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: >
   Post-doctoral Research Fellow at 
@@ -38,7 +38,7 @@ I hold a **Master’s degree in Physics of Complex Systems** and a **Ph.D. in Ma
 
 
 
-### current role
+## Current Role
 
 I’m a **Post-doctoral Research Fellow** at  
 **[MOX – Modeling and Scientific Computing, Politecnico di Milano](https://mox.polimi.it/)**  
@@ -48,7 +48,7 @@ My work lies at the intersection of **physics, computation, and applied mathemat
 
 
 
-### research focus
+## Research Focus
 
 - **Electrostatics of macromolecules and proteins** in electrolytic environments  
 - **Non-equilibrium thermodynamics** and complex system modeling  
@@ -57,14 +57,14 @@ My work lies at the intersection of **physics, computation, and applied mathemat
 
 
 
-### beyond academia
+## Beyond Academia
 
 I am passionate about transforming theoretical insights into **scalable and robust computational tools**.  
 My research aims to connect **analytical theory** and **high-performance computation**, fostering collaborations where **physics meets computation** and ideas become algorithms.
 
 
 
-### explore
+## Explore
 
 - [Publications](/publications/)  
 - [GitHub](https://github.com/vdiflorio) – current projects and open-source tools  

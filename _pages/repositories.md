@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
+title: Repositories
 description: Explore my open-source tools, research software, and ongoing projects.
 nav: true
 nav_order: 3
