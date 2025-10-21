@@ -9,7 +9,7 @@ subtitle: >
 
 profile:
   align: right
-  image: prof_pic2.png
+  image: prof_pic2.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
     <em>"I'm Winston Wolf, I solve problems."</em>
