@@ -31,22 +31,41 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
-
-Hello, I'm **Vincenzo Di Florio**, a physicist passionate about connecting **theoretical models** with **computational innovation**.  
+I’m **Vincenzo Di Florio**, a physicist driven by the challenge of bridging **theoretical models** and **computational innovation**.  
 I hold a **Master’s degree in Physics of Complex Systems** and a **Ph.D. in Mathematical Physics**, combining **analytical rigor**, **numerical modeling**, and **physical intuition**.
 
-I am currently a **Post-doctoral Research Fellow at MOX – Modeling and Scientific Computing, Politecnico di Milano**, and I am also affiliated with the **Istituto Italiano di Tecnologia (IIT)**.
+---
 
-My research focuses on the **electrostatics of macromolecules in electrolytic solutions** and the **thermodynamics of non-equilibrium systems**.  
-During my doctoral and postdoctoral work, I developed **NextGenPB**, a next-generation computational framework for solving complex electrostatic problems in biomolecular environments with high precision and efficiency.
+### Current Role
 
-Beyond academia, I’m motivated by the challenge of transforming physical theory into **robust, scalable, and versatile computational tools**. I enjoy integrating **C++, Python, and MATLAB-like workflows** to design **solvers**, **data-driven models**, and **high-performance simulations**.
+I’m a **Post-doctoral Research Fellow** at  
+**[MOX – Modeling and Scientific Computing, Politecnico di Milano](https://mox.polimi.it/)**  
+and affiliated with the **[Istituto Italiano di Tecnologia (IIT)](https://www.iit.it/it/home)**.  
 
-I’m always eager to collaborate across disciplines—where **physics meets computation**, and **ideas become algorithms**.
+My work lies at the intersection of **physics, computation, and applied mathematics**, with a focus on developing solvers and models for complex physical systems.
 
-Feel free to explore my [publications](/publications/) or visit my [GitHub](https://github.com/vdiflorio) for current projects and code.
+---
+
+### Research Focus
+
+- **Electrostatics of macromolecules and proteins** in electrolytic environments  
+- **Non-equilibrium thermodynamics** and complex system modeling  
+- **[NextGenPB](https://vdiflorio.github.io/nextgenpb_tutorial/)** – a computational solver for biomolecular electrostatics based on the Poisson–Boltzmann Equation, featuring analytical refinement and high-resolution accuracy  
+- Integration of **C++, Python, and MATLAB-like** workflows for scientific computing  
+
+---
+
+### Beyond Academia
+
+I am passionate about transforming theoretical insights into **scalable and robust computational tools**.  
+My research aims to connect **analytical theory** and **high-performance computation**, fostering collaborations where **physics meets computation** and ideas become algorithms.
+
+---
+
+### Explore
+
+- [Publications](/publications/)  
+- [GitHub](https://github.com/vdiflorio) – current projects and open-source tools  
+- Open to collaborations in **computational physics**, **applied physics**, and **scientific software development**
