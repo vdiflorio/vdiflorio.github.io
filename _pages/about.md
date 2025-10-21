@@ -5,14 +5,15 @@ permalink: /
 subtitle: >
   Post-doctoral Research Fellow at 
   <a href="https://mox.polimi.it/">MOX – Modeling and Scientific Computing, Politecnico di Milano</a> • 
+
   Affiliated with <a href="https://www.iit.it/it/home">Istituto Italiano di Tecnologia (IIT)</a> • 
-  <em>"I'm Winston Wolf, I solve problems."</em>
 
 profile:
   align: right
   image: prof_pic2.png
   image_circular: true # crops the image to make it circular
-  #more_info: >
+  more_info: >
+    <em>"I'm Winston Wolf, I solve problems."</em>
   #  <p>555 your office number</p>
   #  <p>123 your address street</p>
   #  <p>Your City, State 12345</p>
@@ -40,10 +41,12 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 Hello, I'm **Vincenzo Di Florio**, a physicist passionate about connecting **theoretical models** with **computational innovation**.  
 I hold a **Master’s degree in Physics of Complex Systems** and a **Ph.D. in Mathematical Physics**, combining **analytical rigor**, **numerical modeling**, and **physical intuition**.
 
+I am currently a **Post-doctoral Research Fellow at MOX – Modeling and Scientific Computing, Politecnico di Milano**, and I am also affiliated with the **Istituto Italiano di Tecnologia (IIT)**.
+
 My research focuses on the **electrostatics of macromolecules in electrolytic solutions** and the **thermodynamics of non-equilibrium systems**.  
 During my doctoral and postdoctoral work, I developed **NextGenPB**, a next-generation computational framework for solving complex electrostatic problems in biomolecular environments with high precision and efficiency.
 
-Beyond academia, I’m motivated by the challenge of transforming physical theory into **robust, scalable, and versatile computational tools**. I enjoy integrating **C++, Python, and MATLAB-like workflows** to design **adaptive mesh solvers**, **data-driven models**, and **high-performance simulations**.
+Beyond academia, I’m motivated by the challenge of transforming physical theory into **robust, scalable, and versatile computational tools**. I enjoy integrating **C++, Python, and MATLAB-like workflows** to design **solvers**, **data-driven models**, and **high-performance simulations**.
 
 I’m always eager to collaborate across disciplines—where **physics meets computation**, and **ideas become algorithms**.
 
