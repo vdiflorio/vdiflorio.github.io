@@ -35,11 +35,7 @@
       "position": "Research Fellow",
       "url": "https://mox.polimi.it/",
       "startDate": "2025-01-01",
-      "endDate": "Present",
-      // "summary": "Research focused on biomolecular electrostatics, non-equilibrium statistical physics, and development of computational tools for complex systems.",
-      // "highlights": [
-      //   "Developing hybrid physics-based models for biomolecular interactions",
-      //   "Investigating non-equilibrium statistical dynamics and low-dimensional systems"
+      "endDate": "Present"
       ]
     },
     {
@@ -47,24 +43,21 @@
       "position": "Collaborator",
       "url": "https://www.iit.it/it/home",
       "startDate": "2024-11-01",
-      "endDate": "2024-12-31",
-      // "summary": "Feasibility analysis and model selection for solving the nonlinear Poisson-Boltzmann equation."
+      "endDate": "2024-12-31"
     },
     {
       "name": "City College of New York (CUNY)",
       "position": "Intern",
       "url": "https://www.ccny.cuny.edu/",
       "startDate": "2024-05-01",
-      "endDate": "2024-08-31",
-      // "summary": "Integrated NextGenPB as an electrostatic solver within the MCCE workflow and developed benchmark applications for $pK_a$ calculations."
+      "endDate": "2024-08-31"
     },
     {
       "name": "SISSA, Trieste",
       "position": "Intern",
       "url": "https://www.sissa.it/",
       "startDate": "2018-09-01",
-      "endDate": "2018-12-31",
-      // "summary": "Sparse identification of dynamical systems from data."
+      "endDate": "2018-12-31"
     }
   ],
   "education": [
@@ -84,7 +77,6 @@
       "startDate": "2019-01-01",
       "endDate": "2021-12-31",
       "score": "110/110 cum Laude"
-      // "courses": ["Statistical Physics", "Mathematical Modelling"]
     },
     {
       "institution": "Università degli Studi di Trieste",
@@ -94,7 +86,6 @@
       "startDate": "2016-01-01",
       "endDate": "2019-12-31",
       "score": "110/110 cum Laude"
-      // "courses": ["Physics", "Numerical Analysis", "Dynamical Systems"]
     }
   ],
   "publications": [
@@ -102,22 +93,19 @@
       "name": "NextGenPB: An analytically-enabled super resolution tool for solving the Poisson-Boltzmann Equation featuring local (de) refinement",
       "publisher": "Computer Physics Communications",
       "releaseDate": "2025-01-01",
-      "url": "https://doi.org/10.1016/j.cpc.2025.109816",
-      // "summary": "Development of a super-resolution computational framework for electrostatics of proteins in biomolecular environments."
-    },
+      "url": "https://doi.org/10.1016/j.cpc.2025.109816"
+    ,
     {
       "name": "Microscopic state equation for oscillator chains",
       "publisher": "The European Physical Journal Plus",
       "releaseDate": "2024-07-01",
-      "url": "https://doi.org/10.1140/epjp/s13360-024-05419-1",
-      // "summary": "Analysis of microscopic state equations in coupled oscillator systems."
+      "url": "https://doi.org/10.1140/epjp/s13360-024-05419-1"
     },
     {
       "name": "Probability Turns Material: The Boltzmann Equation",
       "publisher": "Entropy",
       "releaseDate": "2024-02-01",
-      "url": "https://doi.org/10.3390/e26020171",
-      // "summary": "Study on the role of probability in material behavior and statistical mechanics."
+      "url": "https://doi.org/10.3390/e26020171"
     }
   ],
   "skills": [
