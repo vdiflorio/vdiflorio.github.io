@@ -5,13 +5,12 @@ permalink: /
 subtitle: >
   Post-doctoral Research Fellow at 
   <a href="https://mox.polimi.it/">MOX – Modeling and Scientific Computing, Politecnico di Milano</a> • 
-
-  Affiliated with <a href="https://www.iit.it/it/home">Istituto Italiano di Tecnologia (IIT)</a> • 
+  Affiliated with <a href="https://www.iit.it/it/home">Istituto Italiano di Tecnologia (IIT)</a> 
 
 profile:
   align: right
   image: prof_pic2.png
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info: >
     <em>"I'm Winston Wolf, I solve problems."</em>
   #  <p>555 your office number</p>
