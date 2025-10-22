@@ -31,12 +31,11 @@
   },
   "work": [
     {
-      "name": "MOX – Modeling and Scientific Computing, Politecnico di Milano",
+      "name": "MOX - Modeling and Scientific Computing, Politecnico di Milano",
       "position": "Research Fellow",
       "url": "https://mox.polimi.it/",
       "startDate": "2025-01-01",
       "endDate": "Present"
-      ]
     },
     {
       "name": "Concept Lab, Istituto Italiano di Tecnologia (IIT)",
@@ -94,7 +93,7 @@
       "publisher": "Computer Physics Communications",
       "releaseDate": "2025-01-01",
       "url": "https://doi.org/10.1016/j.cpc.2025.109816"
-    ,
+    },
     {
       "name": "Microscopic state equation for oscillator chains",
       "publisher": "The European Physical Journal Plus",
