@@ -24,10 +24,11 @@
               </tbody>
             </table>
           </div>
-          <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
+          {% assign content_col = "col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0" %}
         {% else %}
-          <div class="col-xs-12 col-sm-12 col-md-12">
+          {% assign content_col = "col-xs-12 col-sm-12 col-md-12" %}
         {% endif %}
+        <div class="{{ content_col }}">
 
             {% if entry.url %}
               <h6 class="title font-weight-bold ml-1 ml-md-4">
