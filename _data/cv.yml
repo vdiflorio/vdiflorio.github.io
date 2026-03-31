@@ -1,98 +1,160 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Vincenzo Di Florio
-    - name: Date of Birth
-      value: 11th September 1997
-    - name: Languages
-      value: English, Italian
+cv:
+  name: Vincenzo Di Florio
+  label: Post-doctoral Research Fellow
 
-- title: Education
-  type: time_table
-  contents:
-    - title: PhD in Mathematical Physics
-      institution: Politecnico di Torino & Istituto Italiano di Tecnologia
-      year: 2021-2025
-      description:
-        - Research topics: Biomolecular modeling, continuum electrostatics, software development for biological systems
-        - Thesis: Mathematical, Algorithmic and Numerical Solutions to Enhance Electrostatic Calculations for Biomolecules in Electrolytic Solutions
-        - Supervisors: Dr. Walter Rocchia, Prof. Lamberto Rondoni
-    - title: Master’s in Physics of Complex Systems
-      institution: Università degli Studi di Torino
-      year: 2019-2021
-      description:
-        - GPA: 110/110 cum Laude
-        - Related coursework: Statistical Physics and Mathematical Modelling
-        - Thesis: State equations and order fluctuations in 1D and 3D
-        - Advisor: Prof. Lamberto Rondoni
-    - title: Bachelor in Physics
-      institution: Università degli Studi di Trieste
-      year: 2016-2019
-      description:
-        - GPA: 110/110 cum Laude
-        - Related coursework: Major in Physics, minor in Numerical Analysis and Dynamical Systems
-        - Thesis: Quantum dots for quantum computation
-        - Advisor: Prof. Angelo Bassi
+  sections:
+    Contact Information:
+      - label: Name
+        details: Vincenzo Di Florio
+      - label: Position
+        details: Post-doctoral Research Fellow
+      - label: Institution
+        details: MOX – Modeling and Scientific Computing, Politecnico di Milano
+      - label: Email
+        details: vincenzo.diflorio@polimi.it
+      - label: Website
+        details: https://vdiflorio.github.io
 
-- title: Experience
-  type: time_table
-  contents:
-    - title: Research Fellow
-      institution: MOX – Modeling and Scientific Computing, Politecnico di Milano
-      year: 2025-Present
-      description:
-        - Developing hybrid physics-based models for biomolecular electrostatics
-        - Investigating non-equilibrium statistical dynamics and low-dimensional systems
-    - title: Collaboration
-      institution: Concept Lab, Istituto Italiano di Tecnologia
-      year: 2024
-      description:
-        - Feasibility analysis for solving the nonlinear Poisson-Boltzmann equation
-    - title: Internship
-      institution: City College of New York (CUNY), New York, USA
-      year: 2024
-      description:
-        - Integrated NextGenPB as an electrostatic solver within the MCCE workflow
-        - Developed benchmark applications for $pK_a$ calculations
-    - title: Internship
-      institution: SISSA, Trieste, Italy
-      year: 2018
-      description:
-        - Sparse identification of dynamical systems from data
+    Professional Summary:
+      - bullet: >
+          A physicist driven by the challenge of bridging **theoretical models** and **computational innovation**.
+          My work lies at the intersection of physics, computation, and applied mathematics, with a focus on
+          developing solvers and models for complex physical systems — from biomolecular electrostatics to
+          non-equilibrium thermodynamics.
 
+    Education:
+      - institution: Politecnico di Torino & Istituto Italiano di Tecnologia
+        studyType: PhD in Mathematical Physics
+        start_date: 2021
+        end_date: 2025
+        location: Turin, Italy
+        highlights:
+          - "Research topics: Biomolecular modeling, continuum electrostatics, software development for biological systems"
+          - "Thesis: Mathematical, Algorithmic and Numerical Solutions to Enhance Electrostatic Calculations for Biomolecules in Electrolytic Solutions"
+          - "Supervisors: Dr. Walter Rocchia, Prof. Lamberto Rondoni"
 
-- title: Teaching
-  type: time_table
-  contents:
-    - title: Tutor – Methods for Environmental Engineering
-      institution: Politecnico di Torino, Turin, Italy
-      year: 2024
-    - title: Teaching Assistant – Calculus 1
-      institution: Politecnico di Torino, Turin, Italy
-      year: 2023
-    - title: Teaching Assistant – Physics 1
-      institution: Università degli Studi di Torino, Turin, Italy
-      year: 2021
+      - institution: Università degli Studi di Torino
+        studyType: Master's in Physics of Complex Systems
+        start_date: 2019
+        end_date: 2021
+        location: Turin, Italy
+        highlights:
+          - "GPA: 110/110 cum Laude"
+          - "Related coursework: Statistical Physics and Mathematical Modelling"
+          - "Thesis: State equations and order fluctuations in 1D and 3D"
+          - "Advisor: Prof. Lamberto Rondoni"
 
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/vdiflorio/NextGenPB">NextGenPB</a>
-      year: 2024-Present
-      description:
-        - Electrostatic solver for biomolecules based on the Poisson-Boltzmann Equation with analytical refinement and high-resolution accuracy
+      - institution: Università degli Studi di Trieste
+        studyType: Bachelor in Physics
+        start_date: 2016
+        end_date: 2019
+        location: Trieste, Italy
+        highlights:
+          - "GPA: 110/110 cum Laude"
+          - "Related coursework: Major in Physics, minor in Numerical Analysis and Dynamical Systems"
+          - "Thesis: Quantum dots for quantum computation"
+          - "Advisor: Prof. Angelo Bassi"
 
+    Experience:
+      - company: MOX – Modeling and Scientific Computing, Politecnico di Milano
+        position: Research Fellow
+        start_date: 2025
+        end_date: Present
+        location: Milan, Italy
+        highlights:
+          - Developing hybrid physics-based models for biomolecular electrostatics
+          - Investigating non-equilibrium statistical dynamics and low-dimensional systems
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Biomolecular Modeling
-      items:
-        - Electrostatics of macromolecules and proteins
-        - Development of computational solvers (NextGenPB)
-    - title: Non-equilibrium Statistical Physics
-      items:
-        - Modeling of low-dimensional systems
-        - Thermodynamic and kinetic analysis
+      - company: Concept Lab, Istituto Italiano di Tecnologia
+        position: Collaboration
+        start_date: 2024
+        end_date: 2024
+        highlights:
+          - Feasibility analysis for solving the nonlinear Poisson-Boltzmann equation
 
+      - company: City College of New York (CUNY)
+        position: Internship
+        start_date: 2024
+        end_date: 2024
+        location: New York, USA
+        highlights:
+          - Integrated NextGenPB as an electrostatic solver within the MCCE workflow
+          - "Developed benchmark applications for pK_a calculations"
+
+      - company: SISSA
+        position: Internship
+        start_date: 2018
+        end_date: 2018
+        location: Trieste, Italy
+        highlights:
+          - Sparse identification of dynamical systems from data
+
+    Teaching:
+      - company: Politecnico di Torino
+        position: Tutor – Methods for Environmental Engineering
+        start_date: 2024
+        end_date: 2024
+        location: Turin, Italy
+
+      - company: Politecnico di Torino
+        position: Teaching Assistant – Calculus 1
+        start_date: 2022
+        end_date: 2023
+        location: Turin, Italy
+
+      - company: Università degli Studi di Torino
+        position: Teaching Assistant – Physics 1
+        start_date: 2021
+        end_date: 2021
+        location: Turin, Italy
+
+    Publications:
+      - title: "NextGenPB: An analytically-enabled super resolution tool for solving the Poisson-Boltzmann Equation"
+        authors: [Di Florio V., Ansalone P., Siryk S. V., Decherchi S., De Falco C., Rocchia W.]
+        publisher: Computer Physics Communications
+        releaseDate: 2025
+        url: https://doi.org/10.1016/j.cpc.2025.109816
+
+      - title: "Patch-Based Ray Tracing in NanoShaper Boosts Molecular Surface Computation"
+        authors: [Mazzeo M. D., Di Florio V., Rocchia W., Decherchi S.]
+        publisher: Journal of Chemical Information and Modeling
+        releaseDate: 2026
+        url: https://doi.org/10.1021/acs.jcim.5c02287
+
+      - title: "Computing nonequilibrium transport from short-time transients"
+        authors: [Carbone D., Di Florio V., Lepri S., Rondoni L.]
+        publisher: The Journal of Chemical Physics
+        releaseDate: 2026
+        url: https://doi.org/10.1063/5.0320325
+
+      - title: "Microscopic state equation for oscillator chains"
+        authors: [Di Florio V., Giberti C., Rondoni L., Zhao H.]
+        publisher: The European Physical Journal Plus
+        releaseDate: 2024
+        url: https://doi.org/10.1140/epjp/s13360-024-05419-1
+
+      - title: "Probability turns material: the Boltzmann equation"
+        authors: [Rondoni L., Di Florio V.]
+        publisher: Entropy
+        releaseDate: 2024
+        url: https://doi.org/10.3390/e26020171
+
+    Skills:
+      - name: Programming Languages
+        keywords: [Python, C++, C, MATLAB, Fortran, Bash]
+      - name: Scientific Computing
+        keywords: [Numerical PDEs, Finite Element Methods, Poisson-Boltzmann solvers, Molecular Dynamics]
+      - name: Tools & Frameworks
+        keywords: [Git, Docker, LaTeX, NumPy, SciPy, Matplotlib]
+
+    Languages:
+      - name: Italian
+        summary: Native speaker
+      - name: English
+        summary: Fluent
+
+    Open Source Projects:
+      - name: NextGenPB
+        url: https://github.com/vdiflorio/NextGenPB
+        highlights:
+          - Electrostatic solver for biomolecules based on the Poisson-Boltzmann Equation with analytical refinement and high-resolution accuracy

@@ -7,11 +7,7 @@ nav: true
 nav_order: 5
 ---
 
-{% assign entry = site.data.cv | where: "title", "Teaching" | first %}
-{% if entry %}
-<div class="cv">
-  <div class="card mt-3 p-3">
-    {% include cv/time_table.liquid %}
-  </div>
-</div>
-{% endif %}
+{% include courses.liquid %}
+
+<!-- To add a Google Calendar, uncomment the line below and set your calendar ID -->
+<!-- {% include calendar.liquid calendar_id='your_calendar_id@gmail.com' timezone='Europe/Rome' %} -->

@@ -1,0 +1,10 @@
+<div class="card-text font-weight-light">
+  <table class="table table-cv table-sm table-borderless">
+    {% for entry in entries %}
+      <tr>
+        <td class="p-1 pr-2 font-weight-bold" style="width: 160px"><b>{{ entry.name }}</b></td>
+        <td class="p-1 pl-2 font-weight-light">{{ entry.keywords | join: ", " }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>

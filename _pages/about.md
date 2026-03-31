@@ -30,44 +30,32 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
+I’m **Vincenzo Di Florio**, a physicist turned computational scientist — driven by a simple ambition: turning the language of physics into algorithms that actually work on real, messy problems.
+
+I hold a **Ph.D. in Mathematical Physics** from Politecnico di Torino and a **Master’s in Physics of Complex Systems** from Università di Torino, with a background that blends analytical rigor, numerical modeling, and a genuine obsession with making things compute efficiently.
 
 ---
 
-I’m **Vincenzo Di Florio**, a physicist driven by the challenge of bridging **theoretical models** and **computational innovation**.  
-I hold a **Master’s degree in Physics of Complex Systems** and a **Ph.D. in Mathematical Physics**, combining **analytical rigor**, **numerical modeling**, and **physical intuition**.
+## What I Work On
 
+I’m currently a **Post-doctoral Research Fellow** at [MOX – Modeling and Scientific Computing, Politecnico di Milano](https://mox.polimi.it/), where my research sits at the crossroads of **physics, applied mathematics, and machine learning**.
 
+On the classical side, I develop solvers for **biomolecular electrostatics** — in particular for the Poisson–Boltzmann equation, which describes how charged molecules behave in electrolytic environments. This led to **[NextGenPB](https://vdiflorio.github.io/nextgenpb_tutorial/)**, a high-resolution solver with analytical super-resolution that I built from the ground up.
 
-## Current Role
+On the data-driven side, I’m actively exploring **Physics-Informed Neural Networks (PINNs)** and **Physics-Guided Neural Networks (PGNNs)** — approaches that embed physical laws directly into machine learning models, enabling accurate predictions even with limited data and enforcing physical consistency by design.
 
-I’m a **Post-doctoral Research Fellow** at  
-**[MOX – Modeling and Scientific Computing, Politecnico di Milano](https://mox.polimi.it/)**  
-and affiliated with the **[Istituto Italiano di Tecnologia (IIT)](https://www.iit.it/it/home)**.  
+I also work on **non-equilibrium statistical mechanics**, studying how complex systems evolve far from equilibrium and what we can learn from short-time transients.
 
-My work lies at the intersection of **physics, computation, and applied mathematics**, with a focus on developing solvers and models for complex physical systems.
-
-
-
-## Research Focus
-
-- **Electrostatics of macromolecules and proteins** in electrolytic environments  
-- **Non-equilibrium thermodynamics** and complex system modeling  
-- **[NextGenPB](https://vdiflorio.github.io/nextgenpb_tutorial/)** – a computational solver for biomolecular electrostatics based on the Poisson–Boltzmann Equation, featuring analytical refinement and high-resolution accuracy  
-- Integration of **C++, Python, and MATLAB-like** workflows for scientific computing  
-
-
+---
 
 ## Beyond Academia
 
 I am passionate about transforming theoretical insights into **scalable and robust computational tools**.  
 My research aims to connect **analytical theory** and **high-performance computation**, fostering collaborations where **physics meets computation** and ideas become algorithms.
 
-
-
-## Explore
-
-- [Publications](/publications/)  
-- [GitHub](https://github.com/vdiflorio) – current projects and open-source tools  
-- Open to collaborations in **computational physics**, **applied physics**, and **scientific software development**
-
 ---
+
+## Let’s Connect
+
+- Browse my [Publications](/publications/) or find me on [GitHub](https://github.com/vdiflorio)
+- I’m open to collaborations in **computational physics**, **scientific machine learning**, and **high-performance scientific software**
