@@ -9,5 +9,17 @@
   url: https://www.sciencedirect.com/journal/computer-physics-communications
   color: "#00369f"
 
+"EPJ+":
+  url: https://link.springer.com/journal/13360
+  color: "#00369f"
+
+"JCP":
+  url: https://pubs.aip.org/aip/jcp
+  color: "#00369f"
+
+"JCIM":
+  url: https://pubs.acs.org/journal/jcisd8
+  color: "#00369f"
+
 "Vision":
   color: "#009f36"

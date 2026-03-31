@@ -62,6 +62,19 @@
         - Sparse identification of dynamical systems from data
 
 
+- title: Teaching
+  type: time_table
+  contents:
+    - title: Tutor – Methods for Environmental Engineering
+      institution: Politecnico di Torino, Turin, Italy
+      year: 2024
+    - title: Teaching Assistant – Calculus 1
+      institution: Politecnico di Torino, Turin, Italy
+      year: 2023
+    - title: Teaching Assistant – Physics 1
+      institution: Università degli Studi di Torino, Turin, Italy
+      year: 2021
+
 - title: Open Source Projects
   type: time_table
   contents:

@@ -1,10 +1,14 @@
 github_users:
   - vdiflorio
 
-
 repo_description_lines_max: 2
 
 github_repos:
   - vdiflorio/NextGenPB
   - vdiflorio/Analytical_Electrostatics
+  - vdiflorio/1Dchain
 
+repo_descriptions:
+  vdiflorio/NextGenPB: "Computational solver for biomolecular electrostatics based on the Poisson–Boltzmann equation, featuring analytical refinement and high-resolution accuracy."
+  vdiflorio/Analytical_Electrostatics: "Analytical tools for electrostatic modeling of macromolecules and proteins in electrolytic environments."
+  vdiflorio/1Dchain: "Numerical simulation of 1D chain models for studying non-equilibrium dynamics and statistical mechanics."

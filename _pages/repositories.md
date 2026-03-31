@@ -9,39 +9,34 @@ nav_order: 3
 
 {% if site.data.repositories.github_users %}
 
-## GitHub user
+## GitHub Profile
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %}
-    {% include repository/repo_user.liquid username=user %}
-  {% endfor %}
+<!-- To hide the profile card, comment out the div below -->
+{% assign gh_user = site.data.repositories.github_users | first %}
+<div id="github-profile"
+  class="mb-4"
+  data-username="{{ gh_user }}">
 </div>
 
 ---
 
-{% if site.repo_trophies.enabled %}
-{% for user in site.data.repositories.github_users %}
-{% if site.data.repositories.github_users.size > 1 %}
-
-  <h4>{{ user }}</h4>
-  {% endif %}
-  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
-  </div>
-
----
-
-{% endfor %}
-{% endif %}
 {% endif %}
 
 {% if site.data.repositories.github_repos %}
 
 ## GitHub Repositories
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.liquid repository=repo %}
-  {% endfor %}
+<div id="repo-grid"
+  class="row g-3 mt-2"
+  data-repos='[{% for repo in site.data.repositories.github_repos %}"{{ repo }}"{% unless forloop.last %},{% endunless %}{% endfor %}]'
+  data-descriptions='[{% for repo in site.data.repositories.github_repos %}"{{ site.data.repositories.repo_descriptions[repo] }}"{% unless forloop.last %},{% endunless %}{% endfor %}]'
+  data-github-user="{{ site.data.repositories.github_users[0] }}">
 </div>
+
+<div id="repo-error" class="text-muted small mt-3" style="display:none;">
+  Unable to load repository data. Visit <a href="https://github.com/{{ site.data.repositories.github_users[0] }}" target="_blank">my GitHub profile</a> directly.
+</div>
+
+<script src="{{ '/assets/js/repositories.js' | relative_url }}"></script>
+
 {% endif %}
