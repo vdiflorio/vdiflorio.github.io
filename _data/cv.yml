@@ -11,20 +11,18 @@ cv:
       - label: Institution
         details: MOX – Modeling and Scientific Computing, Politecnico di Milano
       - label: Email
-        details: vincenzo.diflorio@polimi.it
-      - label: Website
-        details: https://vdiflorio.github.io
+        details: "<a href='mailto:vincenzo.diflorio@polimi.it'>vincenzo.diflorio@polimi.it</a>"
 
     Professional Summary:
       - bullet: >
-          A physicist driven by the challenge of bridging **theoretical models** and **computational innovation**.
-          My work lies at the intersection of physics, computation, and applied mathematics, with a focus on
-          developing solvers and models for complex physical systems — from biomolecular electrostatics to
-          non-equilibrium thermodynamics.
+          Physicist and computational scientist working at the intersection of applied mathematics,
+          numerical methods, and machine learning. My research focuses on **biomolecular electrostatics**
+          — developing PDE solvers, Physics-Informed Neural Networks (PINNs), and Physics-Guided Neural
+          Networks (PGNNs) — alongside **non-equilibrium statistical dynamics**.
 
     Education:
       - institution: Politecnico di Torino & Istituto Italiano di Tecnologia
-        studyType: PhD in Mathematical Physics
+        studyType: PhD in Pure and Applied Mathematics
         start_date: 2021
         end_date: 2025
         location: Turin, Italy
@@ -64,13 +62,6 @@ cv:
         highlights:
           - Developing hybrid physics-based models for biomolecular electrostatics
           - Investigating non-equilibrium statistical dynamics and low-dimensional systems
-
-      - company: Concept Lab, Istituto Italiano di Tecnologia
-        position: Collaboration
-        start_date: 2024
-        end_date: 2024
-        highlights:
-          - Feasibility analysis for solving the nonlinear Poisson-Boltzmann equation
 
       - company: City College of New York (CUNY)
         position: Internship
@@ -141,11 +132,13 @@ cv:
 
     Skills:
       - name: Programming Languages
-        keywords: [Python, C++, C, MATLAB, Fortran, Bash]
+        keywords: [Python, C++, OCTAVE/MATLAB, Bash, Fortran]
       - name: Scientific Computing
-        keywords: [Numerical PDEs, Finite Element Methods, Poisson-Boltzmann solvers, Molecular Dynamics]
+        keywords: [Numerical PDEs, Finite Element Methods, Poisson-Boltzmann solvers, PINNs, PGNNs]
       - name: Tools & Frameworks
-        keywords: [Git, Docker, LaTeX, NumPy, SciPy, Matplotlib]
+        keywords: [Git, Docker, NumPy, SciPy, Matplotlib, LaTeX]
+      - name: Operating Systems
+        keywords: [Linux, macOS]
 
     Languages:
       - name: Italian
