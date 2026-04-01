@@ -18,7 +18,7 @@ cv:
           Physicist and computational scientist working at the intersection of applied mathematics,
           numerical methods, and machine learning. My research focuses on **biomolecular electrostatics**
           — developing PDE solvers, Physics-Informed Neural Networks (PINNs), and Physics-Guided Neural
-          Networks (PGNNs) — alongside **non-equilibrium statistical dynamics**.
+          Networks (PGNNs) — alongside non-equilibrium statistical dynamics.
 
     Education:
       - institution: Politecnico di Torino & Istituto Italiano di Tecnologia
@@ -100,11 +100,11 @@ cv:
         location: Turin, Italy
 
     Publications:
-      - title: "NextGenPB: An analytically-enabled super resolution tool for solving the Poisson-Boltzmann Equation"
-        authors: [Di Florio V., Ansalone P., Siryk S. V., Decherchi S., De Falco C., Rocchia W.]
-        publisher: Computer Physics Communications
-        releaseDate: 2025
-        url: https://doi.org/10.1016/j.cpc.2025.109816
+      - title: "Computing nonequilibrium transport from short-time transients"
+        authors: [Carbone D., Di Florio V., Lepri S., Rondoni L.]
+        publisher: The Journal of Chemical Physics
+        releaseDate: 2026
+        url: https://doi.org/10.1063/5.0320325
 
       - title: "Patch-Based Ray Tracing in NanoShaper Boosts Molecular Surface Computation"
         authors: [Mazzeo M. D., Di Florio V., Rocchia W., Decherchi S.]
@@ -112,11 +112,11 @@ cv:
         releaseDate: 2026
         url: https://doi.org/10.1021/acs.jcim.5c02287
 
-      - title: "Computing nonequilibrium transport from short-time transients"
-        authors: [Carbone D., Di Florio V., Lepri S., Rondoni L.]
-        publisher: The Journal of Chemical Physics
-        releaseDate: 2026
-        url: https://doi.org/10.1063/5.0320325
+      - title: "NextGenPB: An analytically-enabled super resolution tool for solving the Poisson-Boltzmann Equation"
+        authors: [Di Florio V., Ansalone P., Siryk S. V., Decherchi S., De Falco C., Rocchia W.]
+        publisher: Computer Physics Communications
+        releaseDate: 2025
+        url: https://doi.org/10.1016/j.cpc.2025.109816
 
       - title: "Microscopic state equation for oscillator chains"
         authors: [Di Florio V., Giberti C., Rondoni L., Zhao H.]
