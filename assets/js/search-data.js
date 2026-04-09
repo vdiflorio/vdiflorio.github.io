@@ -67,6 +67,13 @@ ninja.data = [{
           window.open("https://github.com/vdiflorio", "_blank");
         },
       },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/vincenzo-di-florio-269b87401", "_blank");
+        },
+      },{
         id: 'social-orcid',
         title: 'ORCID',
         section: 'Socials',
