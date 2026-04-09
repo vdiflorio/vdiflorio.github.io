@@ -6,6 +6,21 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">
       {{ page.title }}
+      {% if page.cv_pdf_industry %}
+        <a
+          {% if page.cv_pdf_industry contains '://' %}
+            href="{{ page.cv_pdf_industry }}"
+          {% else %}
+            href="{{ page.cv_pdf_industry | prepend: 'assets/pdf/' | relative_url }}"
+          {% endif %}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="float-right ml-2"
+          title="Industry CV"
+        >
+          <i class="fa-solid fa-briefcase"></i>
+        </a>
+      {% endif %}
       {% if page.cv_pdf %}
         <a
           {% if page.cv_pdf contains '://' %}
@@ -16,6 +31,7 @@ layout: default
           target="_blank"
           rel="noopener noreferrer"
           class="float-right"
+          title="Academic CV"
         >
           <i class="fa-solid fa-file-pdf"></i>
         </a>
