@@ -42,7 +42,9 @@ pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
   - A. Minimalista — `redesign/alternative/a-minimale.html`
   - B. High-end — `redesign/alternative/b-high-end.html`
   - C. Brutalista — `redesign/alternative/c-brutalista.html`
-- [ ] **Scelta di Vincenzo** (una direzione, o una con correzioni).
+- [x] Primo giro di feedback (2026-11-08): C scartata; A e B troppo lontane dal sito di prima e con troppe immagini.
+- [x] Prototipo D, ibrido A + B vicino al sito di prima — `redesign/alternative/d-ibrida.html`.
+- [ ] **Scelta di Vincenzo** su D (o correzioni).
 
 ### Fase 2 — Direzione definitiva e testi
 

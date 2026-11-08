@@ -119,9 +119,29 @@ Correzioni fatte nel giro: testo corrente portato a 16px o più, figura della ri
 footer di A non più sovrapposto al nome, strisce di B non più fuori pagina, "PAPERS" di C non più
 più largo della colonna, composizioni mobile di A e B ripulite (etichette ε nascoste sul telefono, nome di B su due righe).
 
+## D. Ibrida A + B (2026-11-08, dopo il primo giro)
+
+Reazione di Vincenzo ai prototipi: **C (brutalista) scartata del tutto**; preferenza per qualcosa tra A e B;
+non allontanarsi troppo dallo stile di prima; **troppe immagini**.
+
+Non è una direzione pescata da `draw.mjs`: è una sintesi su richiesta, documentata qui.
+
+- **Struttura:** quella del sito al-folio (nome, sottotitolo, bio con la foto a destra, ricerca, pubblicazioni
+  selezionate, contatti), con i testi della bio quasi invariati.
+- **Da A:** fondo chiaro e accento rosso oxblood (al posto del blu dei link di prima).
+- **Da B:** Zodiak (300/400) per i titoli + Hanken Grotesk per il testo; pubblicazioni come elenco pulito con anno a sinistra; "fatti" accanto alla bio.
+- **Tema:** chiaro di default, scuro (palette di B) con il pulsante "Dark/Light" e `prefers-color-scheme`,
+  come l'interruttore che c'era in al-folio. La scelta resta nel browser (`localStorage`).
+- **Palette chiara:** fondo `#f3f3f2`, superficie `#e7e7e5`, testo `#18191b`, secondario `#55585e`, accento `#8a1019`.
+- **Palette scura:** fondo `#18191b`, superficie `#222427`, testo `#eff0f1`, secondario `#a6a8ad`, accento `#ff6a4d`.
+- **Immagini:** solo due, il ritratto (a colori, come prima) e una molecola nella sezione Ricerca.
+  **Eccezione voluta alla regola della skill** (almeno 4 immagini): l'inspector gira con `--allow few-pictures`.
+- **Citazione di Winston Wolf:** tenuta come didascalia della foto, nel carattere normale (non più monospace).
+- **Misure:** `inspect.mjs` 0 FAIL, 2 WARN (nessun video; poco movimento, voluto).
+
 ## Decisioni ancora aperte
 
-- [ ] Quale direzione (fase 1).
+- [ ] Quale direzione (fase 1): D è la candidata, in attesa di conferma o correzioni.
 - [ ] Citazione di Winston Wolf: tenerla (in carattere normale) o toglierla.
 - [ ] Lingua: solo inglese o anche italiano.
 - [ ] Font self-hosted nel sito finale (sì, salvo licenze: Zodiak ha licenza Fontshare, da verificare per il self-hosting).
