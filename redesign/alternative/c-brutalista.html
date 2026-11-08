@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vincenzo Di Florio — C. Brutalista</title>
+<meta name="description" content="Prototype C (brutalist): Vincenzo Di Florio, computational physicist at MOX, Politecnico di Milano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --surface: #f4f4f4;
+  --surface-2: #e9e9e9;
+  --ink: #111111;
+  --muted: #5f5f5f;
+  --accent: #1a4be0;
+  --accent-ink: #ffffff;
+  --field: #111111;
+  --field-ink: #ffffff;
+
+  --font: "Schibsted Grotesk", system-ui, sans-serif;
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.5rem, 1.1rem + 1.4vw, 2.375rem);
+  --step-giant: clamp(4.5rem, 1.5rem + 10vw, 9.5rem);
+
+  --margin: clamp(16px, 2.6vw, 40px);
+  --gap-section: clamp(104px, 12vw, 200px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 var(--step-body)/1.45 var(--font); letter-spacing: -0.01em; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--accent); text-underline-offset: 0.16em; text-decoration-thickness: 2px; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 26px;
+  background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 600; font-size: var(--step-body);
+  transition: transform .15s ease, background-color .15s ease;
+}
+.btn:hover { color: var(--bg); background: #000; transform: translate(-3px, -3px); box-shadow: 3px 3px 0 var(--accent); }
+.btn:active { transform: none; box-shadow: none; }
+.giant { font-weight: 800; font-size: var(--step-giant); line-height: .86; letter-spacing: -0.05em; text-transform: uppercase; margin: 0; }
+.h-mid { font-weight: 800; font-size: var(--step-lead); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 24px; }
+
+/* ---------- Hero: stacked name, two inks ---------- */
+.hero { position: relative; height: 100svh; min-height: 600px; background: var(--accent); color: var(--field-ink); overflow: hidden; }
+.hero__top { display: flex; justify-content: space-between; align-items: center; padding: 22px var(--margin); font-weight: 600; font-size: 0.9375rem; }
+.hero__top a { color: var(--field-ink); text-decoration: none; }
+.hero__top a:hover { text-decoration: underline; }
+.hero__top nav { display: flex; gap: 24px; }
+.hero__name { position: absolute; left: var(--margin); top: 15%; margin: 0; font-weight: 800; font-size: clamp(96px, 16.5vw, 260px); line-height: .82; letter-spacing: -0.055em; }
+.hero__name span { display: block; }
+.hero__name span + span { color: var(--ink); }
+.hero__foot { position: absolute; right: var(--margin); bottom: 40px; width: min(34ch, calc(100% - 2 * var(--margin))); display: grid; gap: 20px; justify-items: start; }
+.hero__foot p { margin: 0; font-size: 1.1875rem; line-height: 1.35; font-weight: 600; }
+.hero__foot .btn { background: var(--field-ink); color: var(--ink); }
+.hero__foot .btn:hover { background: var(--field-ink); color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+
+/* ---------- Mesh: the live thing ---------- */
+.mesh { padding: var(--gap-section) var(--margin) 0; }
+.mesh__head { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end; margin-bottom: 32px; }
+.mesh__head p { margin: 0; max-width: 44ch; justify-self: end; }
+.mesh canvas { display: block; width: 100%; touch-action: pan-y; cursor: crosshair; }
+.mesh .fallback { display: none; }
+.no-js .mesh canvas { display: none; }
+.no-js .mesh .fallback { display: block; }
+.mesh__note { display: flex; justify-content: space-between; gap: 16px; margin-top: 14px; color: var(--muted); font-size: var(--step-small); }
+
+/* ---------- About: portrait as drop cap ---------- */
+.about { padding: var(--gap-section) var(--margin); display: grid; grid-template-columns: 2fr 10fr; gap: 32px; }
+.about__facts { list-style: none; margin: 0; padding: 0; font-size: var(--step-small); display: grid; gap: 16px; align-content: start; color: var(--muted); }
+.about__facts b { display: block; color: var(--ink); font-weight: 600; }
+.about__text p { font-size: clamp(1.25rem, 0.95rem + 1vw, 1.75rem); line-height: 1.25; margin: 0 0 1.2em; color: var(--muted); max-width: 40ch; }
+.about__text p:first-of-type::first-line { color: var(--ink); }
+.about__text strong { color: var(--ink); font-weight: 600; }
+.about__text img { float: left; width: 3.6em; height: 3.6em; object-fit: cover; object-position: 50% 25%; margin: 0.12em 0.5em 0 0; filter: grayscale(1) contrast(1.1); }
+
+/* ---------- Research: giant title, uneven wall ---------- */
+.work { background: var(--field); color: var(--field-ink); padding: var(--gap-section) var(--margin); }
+.work__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px 24px; margin-bottom: 32px; }
+.work__head a { color: var(--field-ink); font-weight: 600; }
+.wall { display: flex; flex-wrap: wrap; gap: 8px; }
+.wall figure { margin: 0; flex-grow: var(--r); flex-basis: calc(var(--r) * var(--h)); height: auto; }
+.wall figure div { height: var(--h); background: #1c1c1c; display: grid; place-items: center; overflow: hidden; }
+.wall img { width: 100%; height: 100%; object-fit: contain; transition: opacity .2s ease; }
+.wall figcaption { display: flex; justify-content: space-between; gap: 12px; font-size: var(--step-small); margin-top: 8px; color: #c9c9c9; }
+.wall figcaption span:first-child { color: var(--field-ink); }
+.wall:hover figure:not(:hover) img { opacity: .55; }
+
+/* ---------- Papers: giant word, filled bars ---------- */
+.papers { padding: var(--gap-section) var(--margin) 0; display: grid; grid-template-columns: 1fr minmax(0, 720px) 1fr; }
+.papers > * { grid-column: 2; }
+.papers .giant { container-type: inline-size; }
+.papers__word { font-size: 24.5cqw; line-height: .8; display: block; }
+.papers__intro { margin: 24px 0 20px; color: var(--muted); }
+details { background: var(--surface); margin-bottom: 6px; }
+summary { display: flex; justify-content: space-between; align-items: center; min-height: 56px; padding: 0 18px; font-weight: 600; cursor: pointer; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-size: 1.5rem; font-weight: 400; transition: transform .2s ease; }
+details[open] summary::after { transform: rotate(45deg); }
+summary:hover { background: var(--surface-2); }
+details ol { list-style: none; margin: 0; padding: 4px 18px 22px; display: grid; gap: 18px; }
+details li a { font-weight: 600; text-decoration: none; color: var(--ink); }
+details li a:hover { color: var(--accent); text-decoration: underline; }
+details li p { margin: 4px 0 0; font-size: var(--step-small); color: var(--muted); display: flex; justify-content: space-between; gap: 16px; }
+
+/* ---------- Contact: display rows ---------- */
+.contact { padding-top: var(--gap-section); }
+.contact .h-mid { padding-inline: var(--margin); }
+.rows { list-style: none; margin: 0; padding: 0; }
+.rows li { font-size: clamp(2.25rem, 1rem + 4.6vw, 5.5rem); font-weight: 400; letter-spacing: -0.04em; line-height: 1; padding: 44px var(--margin) 22px; }
+.rows li:nth-child(odd) { background: var(--surface); }
+.rows a { color: var(--ink); text-decoration: none; }
+.rows a:hover { color: var(--accent); }
+.rows .go { display: flex; align-items: center; gap: 24px; }
+.rows .go a.round { display: inline-grid; place-items: center; width: .9em; height: .9em; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 1em; transition: transform .15s ease; }
+.rows .go a.round:hover { transform: scale(1.08); color: var(--accent-ink); }
+
+/* ---------- Footer: invitation over a cropped name ---------- */
+.footer { position: relative; overflow: hidden; background: var(--field); color: var(--field-ink); min-height: 88svh; padding: 96px var(--margin) 0; }
+.footer__grid { display: grid; grid-template-columns: 7fr 2fr 3fr; gap: 32px; }
+.footer__invite { font-weight: 800; font-size: clamp(2.5rem, 1.2rem + 4.2vw, 5.5rem); line-height: .95; letter-spacing: -0.04em; margin: 0 0 32px; }
+.footer .btn { background: var(--field-ink); color: var(--ink); }
+.footer .btn:hover { color: var(--ink); box-shadow: 3px 3px 0 var(--accent); }
+.footer__links { grid-column: 3; list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; align-content: start; }
+.footer__links a { color: var(--field-ink); }
+.footer__legal { position: absolute; left: var(--margin); right: var(--margin); bottom: 19vw; display: flex; justify-content: space-between; font-size: var(--step-small); color: #c9c9c9; }
+.footer__name { position: absolute; left: calc(var(--margin) - 1vw); bottom: 0; margin: 0; font-weight: 800; font-size: 27vw; line-height: .8; letter-spacing: -0.06em; white-space: nowrap; transform: translateY(24%); }
+
+@media (max-width: 900px) {
+  .mesh__head { grid-template-columns: 1fr; }
+  .mesh__head p { justify-self: start; }
+  .about { grid-template-columns: 1fr; }
+  .about__facts { grid-row: 2; grid-template-columns: repeat(3, 1fr); }
+  .footer__grid { grid-template-columns: 1fr; }
+  .footer__links { grid-column: 1; }
+}
+@media (max-width: 600px) {
+  .hero__top nav a:not(:last-child) { display: none; }
+  .hero__name { font-size: 21vw; top: 18%; }
+  .hero__foot { left: var(--margin); right: var(--margin); width: auto; bottom: 24px; }
+  .hero__foot .btn { width: 100%; }
+  .about__facts { grid-template-columns: 1fr; }
+  .about__text img { width: 4.8em; height: 4.8em; }
+  .wall figure { flex-basis: 100% !important; }
+  .wall figure div { height: 220px; }
+  .rows li { font-size: 9.6vw; padding: 32px var(--margin) 16px; }
+  .footer__legal { bottom: 30vw; flex-direction: column; gap: 4px; }
+  .footer__name { font-size: 34vw; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero__name span { animation: rise .9s cubic-bezier(.2,.75,.2,1) both; }
+  .hero__name span + span { animation-delay: .11s; }
+  .hero__name { overflow: hidden; padding-bottom: .04em; }
+  .hero__foot { animation: fade .6s .5s ease both; }
+  @keyframes rise { from { transform: translateY(100%); } to { transform: none; } }
+  @keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  .rise { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+  .rise.in { opacity: 1; transform: none; }
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+<noscript><style>.mesh canvas{display:none}.mesh .fallback{display:block}</style></noscript>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero__top">
+    <a href="#">VDF</a>
+    <nav aria-label="Main">
+      <a href="#research">Research</a>
+      <a href="#papers">Papers</a>
+      <a href="../../assets/pdf/CV.pdf">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <h1 class="hero__name"><span>Vincenzo</span><span>Di Florio</span></h1>
+  <div class="hero__foot">
+    <p>Computational physicist at MOX, Politecnico di Milano. I build solvers for the electrostatics of biomolecules.</p>
+    <a class="btn" href="mailto:vincenzo.diflorio@polimi.it">Email me</a>
+  </div>
+</header>
+
+<main>
+  <section class="mesh" aria-labelledby="mesh-title">
+    <div class="mesh__head rise">
+      <h2 id="mesh-title" class="h-mid">Fine only where it matters</h2>
+      <p>NextGenPB meshes a molecule this way: big cells far away, small cells only along the surface, where the physics changes. Here the surface is my name. Move the pointer, or drag a finger, to refine the grid where you look.</p>
+    </div>
+    <canvas id="mesh" role="img" aria-label="The name Di Florio drawn by a quadtree grid that becomes finer near the edges of the letters and around the pointer."></canvas>
+    <img class="fallback" src="img/octree.webp" width="1600" height="782" alt="Octree grid of NextGenPB, refined only near a molecular surface.">
+    <div class="mesh__note"><span>Quadtree, 5 levels, refined at the boundary and under the pointer</span><span id="mesh-count"></span></div>
+  </section>
+
+  <section class="about" aria-labelledby="about-title">
+    <ul class="about__facts rise">
+      <li><b>Now</b>MOX, Politecnico di Milano, since 2025</li>
+      <li><b>Ph.D.</b>Politecnico di Torino and IIT, 2021–2025</li>
+      <li><b>Reach</b><a href="mailto:vincenzo.diflorio@polimi.it">vincenzo.diflorio@polimi.it</a></li>
+    </ul>
+    <div class="about__text rise">
+      <h2 id="about-title" class="h-mid">About</h2>
+      <p><img src="img/ritratto.webp" width="900" height="1067" alt="Portrait of Vincenzo Di Florio."><strong>Vincenzo Di Florio</strong> is a physicist turned computational scientist. He turns the language of physics into algorithms that work on real, messy problems, from <strong>the electrostatics of proteins in salt water</strong> to <strong>physics-informed neural networks</strong>.</p>
+      <p>He wrote <a href="https://vdiflorio.github.io/nextgenpb_tutorial/">NextGenPB</a>, a finite element Poisson–Boltzmann solver, and works on <strong>heat conduction and transport far from equilibrium</strong>. He is open to collaborations in scientific computing.</p>
+    </div>
+  </section>
+
+  <section class="work" id="research" aria-labelledby="work-title">
+    <div class="work__head">
+      <h2 id="work-title" class="giant">Research</h2>
+      <a href="https://github.com/vdiflorio">Code on GitHub</a>
+    </div>
+    <div class="wall">
+      <figure class="rise" style="--r:1.36;--h:340px"><div><img src="img/molecola.webp" width="1100" height="1528" alt="Protein surface coloured by electrostatic potential." loading="lazy"></div><figcaption><span>Surface potential</span><span>NextGenPB</span></figcaption></figure>
+      <figure class="rise" style="--r:2.05;--h:340px"><div><img src="img/octree.webp" width="1600" height="782" alt="Octree grid refined near the molecular surface." loading="lazy"></div><figcaption><span>Octree grid</span><span>2025</span></figcaption></figure>
+      <figure class="rise" style="--r:1.33;--h:340px"><div><img src="img/barnase-barstar.webp" width="1600" height="1200" alt="Barnase and barstar with arrows for the force on each." loading="lazy"></div><figcaption><span>Barnase–barstar forces</span><span>2025</span></figcaption></figure>
+      <figure class="rise" style="--r:3.16;--h:240px"><div><img src="img/mesh.webp" width="2000" height="632" alt="Local mesh refinement at three zoom levels." loading="lazy"></div><figcaption><span>Local refinement</span><span>2025</span></figcaption></figure>
+      <figure class="rise" style="--r:1;--h:240px"><div><img src="img/nlpb.webp" width="1200" height="1200" alt="Nonlinear Poisson–Boltzmann solution on a branched molecule." loading="lazy"></div><figcaption><span>Nonlinear PB</span><span>2025</span></figcaption></figure>
+      <figure class="rise" style="--r:2.13;--h:300px"><div><img src="img/sito-attivo.webp" width="1800" height="845" alt="Active site, zoomed, with force vectors on atoms." loading="lazy"></div><figcaption><span>Forces on an active site</span><span>2025</span></figcaption></figure>
+      <figure class="rise" style="--r:.82;--h:300px"><div><img src="img/spike.webp" width="1043" height="1279" alt="Spike protein with surface potential and field lines." loading="lazy"></div><figcaption><span>Spike, field lines</span><span>2025</span></figcaption></figure>
+      <figure class="rise" style="--r:1;--h:300px"><div><img src="img/molecola-lunga.webp" width="1200" height="1200" alt="Molecular surface coloured by potential." loading="lazy"></div><figcaption><span>Molecular surface</span><span>2026</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="papers" id="papers" aria-labelledby="papers-title">
+    <h2 id="papers-title" class="giant"><span class="papers__word">Papers</span></h2>
+    <p class="papers__intro rise">Peer-reviewed articles, newest first. Full list on <a href="https://scholar.google.com/citations?user=t_W18NgAAAAJ">Google Scholar</a>.</p>
+    <details class="rise" open>
+      <summary>2026 · 2 papers</summary>
+      <ol>
+        <li><a href="https://doi.org/10.1063/5.0320325">Computing nonequilibrium transport from short-time transients: from Lorentz gas to heat conduction in one-dimensional chains</a><p><span>Carbone, Di Florio, Lepri, Rondoni</span><span>J. Chem. Phys.</span></p></li>
+        <li><a href="https://doi.org/10.1021/acs.jcim.5c02287">Patch-based ray tracing in NanoShaper boosts molecular surface computation</a><p><span>Mazzeo, Di Florio, Rocchia, Decherchi</span><span>J. Chem. Inf. Model.</span></p></li>
+      </ol>
+    </details>
+    <details class="rise">
+      <summary>2025 · 1 paper</summary>
+      <ol>
+        <li><a href="https://doi.org/10.1016/j.cpc.2025.109816">NextGenPB: an analytically-enabled super resolution tool for solving the Poisson–Boltzmann equation featuring local (de)refinement</a><p><span>Di Florio, Ansalone, Siryk, Decherchi, De Falco, Rocchia</span><span>Comput. Phys. Commun.</span></p></li>
+      </ol>
+    </details>
+    <details class="rise">
+      <summary>2024 · 2 papers</summary>
+      <ol>
+        <li><a href="https://doi.org/10.1140/epjp/s13360-024-05419-1">Microscopic state equation for oscillator chains</a><p><span>Di Florio, Giberti, Rondoni, Zhao</span><span>Eur. Phys. J. Plus</span></p></li>
+        <li><a href="https://doi.org/10.3390/e26020171">Probability turns material: the Boltzmann equation</a><p><span>Rondoni, Di Florio</span><span>Entropy</span></p></li>
+      </ol>
+    </details>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="h-mid">Contact</h2>
+    <ul class="rows">
+      <li class="rise">MOX, Politecnico di Milano</li>
+      <li><a href="https://maps.google.com/?q=Piazza+Leonardo+da+Vinci+32+Milano">Piazza Leonardo da Vinci 32</a></li>
+      <li>20133 Milano</li>
+      <li class="go"><a href="mailto:vincenzo.diflorio@polimi.it">Write</a><a class="round" href="mailto:vincenzo.diflorio@polimi.it" aria-label="Send an email">→</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <p class="footer__invite">Got a hard<br>PDE? Write.</p>
+      <a class="btn" href="mailto:vincenzo.diflorio@polimi.it">vincenzo.diflorio@polimi.it</a>
+    </div>
+    <ul class="footer__links">
+      <li><a href="https://github.com/vdiflorio">GitHub</a></li>
+      <li><a href="https://scholar.google.com/citations?user=t_W18NgAAAAJ">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-9839-1518">ORCID</a></li>
+      <li><a href="https://www.linkedin.com/in/vincenzo-di-florio-269b87401">LinkedIn</a></li>
+    </ul>
+  </div>
+  <div class="footer__legal"><span>© 2026 Vincenzo Di Florio</span><span>Figures: own work, computed with NextGenPB</span></div>
+  <p class="footer__name" aria-hidden="true">Di Florio</p>
+</footer>
+
+<script>
+(() => {
+  const cv = document.getElementById('mesh');
+  if (!cv || !cv.getContext) return;
+  const ctx = cv.getContext('2d');
+  const count = document.getElementById('mesh-count');
+  const C = { ink: '#111111', out: '#f4f4f4', edge: '#1a4be0', gap: '#ffffff' };
+  let W, H, dpr, sat, sw, root, minS, pointer = null, raf = 0;
+
+  function build() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = Math.round(W * (W < 600 ? 0.42 : 0.3));
+    cv.width = W * dpr; cv.height = H * dpr; cv.style.height = H + 'px';
+    root = W < 600 ? 32 : 64; minS = W < 600 ? 4 : 4;
+    // ink mask of the name
+    const off = document.createElement('canvas'); off.width = W; off.height = H;
+    const o = off.getContext('2d');
+    let size = H * 0.95;
+    o.font = `800 ${size}px "Schibsted Grotesk", sans-serif`;
+    const tw = o.measureText('DI FLORIO').width;
+    size = Math.min(size, size * (W * 0.98) / tw);
+    o.font = `800 ${size}px "Schibsted Grotesk", sans-serif`;
+    o.textBaseline = 'alphabetic'; o.fillStyle = '#000';
+    o.fillText('DI FLORIO', (W - o.measureText('DI FLORIO').width) / 2, H * 0.5 + size * 0.36);
+    const a = o.getImageData(0, 0, W, H).data;
+    // summed-area table of ink
+    sw = W + 1; sat = new Uint32Array((W + 1) * (H + 1));
+    for (let y = 1; y <= H; y++) {
+      let row = 0;
+      for (let x = 1; x <= W; x++) {
+        row += a[((y - 1) * W + (x - 1)) * 4 + 3] > 127 ? 1 : 0;
+        sat[y * sw + x] = sat[(y - 1) * sw + x] + row;
+      }
+    }
+    draw();
+  }
+  function ink(x, y, s) {
+    const x0 = Math.max(0, Math.min(W, x)), y0 = Math.max(0, Math.min(H, y));
+    const x1 = Math.max(0, Math.min(W, x + s)), y1 = Math.max(0, Math.min(H, y + s));
+    return sat[y1 * sw + x1] - sat[y0 * sw + x1] - sat[y1 * sw + x0] + sat[y0 * sw + x0];
+  }
+  let n = 0;
+  function cell(x, y, s) {
+    const area = Math.max(1, (Math.min(W, x + s) - x) * (Math.min(H, y + s) - y));
+    const k = ink(x, y, s), mixed = k > 0 && k < area;
+    let near = false;
+    if (pointer) { const dx = pointer.x - (x + s / 2), dy = pointer.y - (y + s / 2); near = Math.hypot(dx, dy) < Math.max(70, s * 1.2); }
+    if ((mixed || near) && s > minS) { const h = s / 2; cell(x, y, h); cell(x + h, y, h); cell(x, y + h, h); cell(x + h, y + h, h); return; }
+    n++;
+    ctx.fillStyle = mixed ? C.edge : (k > area / 2 ? C.ink : C.out);
+    const g = s >= 16 ? 2 : 1;
+    ctx.fillRect(x + g / 2, y + g / 2, s - g, s - g);
+  }
+  function draw() {
+    raf = 0; n = 0;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = C.gap; ctx.fillRect(0, 0, W, H);
+    for (let y = 0; y < H; y += root) for (let x = 0; x < W; x += root) cell(x, y, root);
+    if (count) count.textContent = n.toLocaleString('en') + ' cells';
+  }
+  const move = (e) => { const r = cv.getBoundingClientRect(); pointer = { x: e.clientX - r.left, y: e.clientY - r.top }; if (!raf) raf = requestAnimationFrame(draw); };
+  cv.addEventListener('pointermove', move);
+  cv.addEventListener('pointerdown', move);
+  cv.addEventListener('pointerleave', () => { pointer = null; if (!raf) raf = requestAnimationFrame(draw); });
+  let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(build, 150); });
+  (document.fonts ? document.fonts.load('800 100px "Schibsted Grotesk"') : Promise.resolve()).then(build, build);
+})();
+(() => {
+  if (!('IntersectionObserver' in window)) return document.querySelectorAll('.rise').forEach((el) => el.classList.add('in'));
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.rise').forEach((el) => io.observe(el));
+})();
+</script>
+</body>
+</html>

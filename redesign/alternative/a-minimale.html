@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vincenzo Di Florio — A. Minimalista</title>
+<meta name="description" content="Prototype A (minimal): Vincenzo Di Florio, computational physicist at MOX, Politecnico di Milano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,400&family=Albert+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e2e2e2;
+  --surface: #d6d6d6;
+  --ink: #7d0c14;
+  --muted: #7a4a4e;
+  --accent: #7d0c14;
+  --accent-ink: #e2e2e2;
+  --field: #7d0c14;
+  --field-ink: #e2e2e2;
+  --field-deep: #3a0509;
+  --field-soft: #e9c9cb;
+
+  --display: "Imbue", "Times New Roman", serif;
+  --text: "Albert Sans", system-ui, sans-serif;
+
+  --step-small: clamp(0.875rem, 0.84rem + 0.1vw, 0.9375rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.05rem + 0.8vw, 1.875rem);
+  --step-head: clamp(2.75rem, 1.6rem + 4.6vw, 6.5rem);
+
+  --margin: clamp(20px, 3vw, 40px);
+  --gap-section: clamp(96px, 12vw, 200px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: var(--step-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.wrap { padding-inline: var(--margin); }
+h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: var(--step-head);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0 0 0.45em;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 22px;
+  background: var(--accent); color: var(--accent-ink);
+  font: 500 var(--step-small)/1 var(--text);
+  text-decoration: none; border-radius: 0;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn--light { background: var(--field-ink); color: var(--field); font-size: var(--step-body); min-height: 56px; }
+
+/* ---------- Hero: two fields, the seam is the molecular surface ---------- */
+.hero { position: relative; height: 100svh; min-height: 620px; overflow: hidden; }
+.hero__top, .hero__bottom { position: absolute; inset-inline: 0; }
+.hero__top { top: 0; height: 50%; background: var(--bg); }
+.hero__bottom { bottom: 0; height: 50%; background: var(--field); }
+.hero__layer { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+.hero__layer--top { clip-path: inset(0 0 50% 0); color: var(--ink); }
+.hero__layer--bottom { clip-path: inset(50% 0 0 0); color: var(--field-ink); }
+.hero__name {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(96px, 15.5vw, 250px);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translateY(-0.36em);
+}
+.hero__name span { display: block; }
+.nav {
+  position: absolute; top: 0; inset-inline: 0; z-index: 3;
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  padding: 20px var(--margin);
+  font-size: var(--step-small);
+}
+.nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+.nav a:not(.btn) { text-decoration: none; }
+.nav a:not(.btn):hover { text-decoration: underline; }
+.eps {
+  position: absolute; left: var(--margin); z-index: 2;
+  font-size: var(--step-small); margin: 0;
+}
+.eps--in { bottom: calc(50% + 14px); color: var(--muted); }
+.eps--out { top: calc(50% + 14px); color: var(--field-soft); }
+.hero__sub {
+  position: absolute; z-index: 2; left: 50%; bottom: 56px; transform: translateX(-50%);
+  width: min(36ch, calc(100% - 2 * var(--margin)));
+  margin: 0; text-align: center;
+  color: var(--field-ink); font-size: var(--step-lead); line-height: 1.3;
+}
+.hero__actions { position: absolute; z-index: 2; right: var(--margin); bottom: 56px; display: flex; gap: 12px; }
+
+/* ---------- Intro: lead line over four columns ---------- */
+.intro { background: var(--field); color: var(--field-ink); padding-block: 30svh 120px; }
+.intro__lead { font-size: var(--step-lead); line-height: 1.25; max-width: 42ch; margin: 0 0 72px; }
+.intro__cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 0; }
+.intro__cols p { margin: 0; font-size: var(--step-body); line-height: 1.5; color: var(--field-soft); }
+.intro__cols strong { color: var(--field-ink); font-weight: 500; }
+.intro__cols a { color: var(--field-ink); }
+
+/* ---------- Research: one large figure, four lines beside it ---------- */
+.research { padding-block: var(--gap-section); }
+.research__grid { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+.research figure { margin: 0; }
+.research figure img { width: 100%; max-height: 76svh; object-fit: contain; object-position: left top; }
+figcaption { font-size: var(--step-small); color: var(--muted); margin-top: 12px; max-width: 48ch; }
+.topics { list-style: none; margin: 0; padding: 0; display: grid; gap: 40px; }
+.topics h3 { font: 500 var(--step-lead)/1.15 var(--text); margin: 0 0 8px; }
+.topics p { margin: 0; max-width: 46ch; }
+.band { background: var(--surface); padding-block: clamp(48px, 6vw, 96px); }
+.band__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(20px, 3vw, 48px); align-items: end; }
+.band figure { margin: 0; }
+
+/* ---------- Publications: one size, on the red field ---------- */
+.pubs { background: var(--field); color: var(--field-ink); padding-block: var(--gap-section); }
+.pubs h2 { color: var(--field-ink); }
+.pubs__year { font: 500 var(--step-lead)/1 var(--text); color: var(--field-soft); margin: 64px 0 16px; }
+.pubs ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.pubs li { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr) auto; gap: 24px; font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.375rem); line-height: 1.3; }
+.pubs li a { text-decoration: none; }
+.pubs li a:hover { text-decoration: underline; }
+.pubs .journal { color: var(--field-soft); }
+.pubs .doi { font-size: var(--step-small); color: var(--field-soft); white-space: nowrap; }
+
+/* ---------- Contact: address in display rows ---------- */
+.contact { position: relative; padding-block: var(--gap-section) 0; }
+.contact__fig { position: absolute; right: var(--margin); bottom: 0; width: min(34vw, 520px); margin: 0; z-index: 1; pointer-events: none; }
+.rows { margin: 0; padding: 0; list-style: none; }
+.rows li {
+  font-family: var(--display); text-transform: uppercase;
+  font-size: clamp(36px, 6vw, 92px); line-height: 1; letter-spacing: -0.01em;
+  padding: 36px var(--margin) 18px;
+}
+.rows li:nth-child(odd) { background: var(--surface); }
+.rows a { text-decoration: none; }
+.rows a:hover { text-decoration: underline; text-decoration-thickness: 3px; }
+
+/* ---------- Footer: invitation over a cropped name ---------- */
+.footer { position: relative; z-index: 2; overflow: hidden; background: var(--field); color: var(--field-ink); min-height: 92svh; padding: 96px var(--margin) 0; }
+.footer__top { display: grid; grid-template-columns: 7fr 2fr 3fr; gap: 32px; align-items: start; }
+.footer__invite { font: 400 clamp(2.25rem, 1.4rem + 3.4vw, 4.75rem)/1 var(--display); text-transform: uppercase; margin: 0 0 32px; }
+.footer__links { grid-column: 3; list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.footer__legal { position: absolute; left: var(--margin); right: var(--margin); bottom: calc(17.5vw + 20px); display: flex; justify-content: space-between; font-size: var(--step-small); color: var(--field-soft); }
+.footer__name {
+  position: absolute; left: var(--margin); bottom: 0; margin: 0;
+  font: 400 30vw/0.8 var(--display); text-transform: uppercase; white-space: nowrap;
+  color: var(--field-ink); transform: translateY(28%);
+}
+
+@media (max-width: 900px) {
+  .intro__cols { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+  .research__grid { grid-template-columns: 1fr; }
+  .band__grid { grid-template-columns: 1fr 1fr; }
+  .band__grid figure:last-child { grid-column: span 2; }
+  .pubs li { grid-template-columns: 1fr auto; }
+  .pubs .journal { grid-column: 1; }
+  .footer__top { grid-template-columns: 1fr; }
+  .footer__links { grid-column: 1; }
+}
+@media (max-width: 600px) {
+  .nav ul { display: none; }
+  .nav { justify-content: flex-end; }
+  .eps { display: none; }
+  .intro { padding-top: 72px; }
+  .hero { min-height: 560px; }
+  .hero__top { height: 46%; } .hero__bottom { height: 54%; }
+  .hero__layer--top { clip-path: inset(0 0 54% 0); }
+  .hero__layer--bottom { clip-path: inset(46% 0 0 0); }
+  .hero__layer { place-items: start center; padding-top: calc(46svh - 1.05 * 23vw); }
+  .hero__name { font-size: 23vw; transform: none; }
+  .eps--in { bottom: calc(54% + 10px); } .eps--out { top: calc(46% + 10px); }
+  .hero__sub { bottom: auto; top: calc(46% + 23vw * 0.86 + 40px); font-size: 1.125rem; }
+  .hero__actions { left: var(--margin); right: var(--margin); bottom: 40px; }
+  .hero__actions .btn { flex: 1; }
+  .intro__cols { grid-template-columns: 1fr; }
+  .band__grid { grid-template-columns: 1fr; }
+  .band__grid figure:last-child { grid-column: auto; }
+  .pubs li { grid-template-columns: 1fr; gap: 4px; }
+  .rows li { font-size: 9.6vw; padding: 28px var(--margin) 14px; }
+  .footer__legal { bottom: calc(20vw + 16px); flex-direction: column; gap: 4px; }
+  .contact__fig { display: none; }
+  .footer__name { font-size: 34vw; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .rise { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rise.in { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero__top"></div>
+  <div class="hero__bottom"></div>
+  <nav class="nav" aria-label="Main">
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="../../assets/pdf/CV.pdf">CV</a></li>
+    </ul>
+    <a class="btn" href="mailto:vincenzo.diflorio@polimi.it">Email me</a>
+  </nav>
+  <div class="hero__layer hero__layer--top">
+    <h1 class="hero__name"><span>Vincenzo</span><span>Di Florio</span></h1>
+  </div>
+  <div class="hero__layer hero__layer--bottom" aria-hidden="true">
+    <p class="hero__name"><span>Vincenzo</span><span>Di Florio</span></p>
+  </div>
+  <p class="eps eps--in">Inside the protein, ε ≈ 2</p>
+  <p class="eps eps--out">Salt water, ε ≈ 80</p>
+  <p class="hero__sub">Computational physicist at MOX, Politecnico di Milano. I build solvers for the electrostatics of biomolecules.</p>
+</header>
+
+<main>
+  <section class="intro wrap" aria-labelledby="intro-title">
+    <h2 id="intro-title" class="rise" style="color:var(--field-ink)">About</h2>
+    <p class="intro__lead rise">I turn the physics of charged molecules into algorithms that work on real, messy problems: finite element solvers, physics-informed networks, and systems far from equilibrium.</p>
+    <div class="intro__cols">
+      <p class="rise"><strong>Physicist by training.</strong> Bachelor in Trieste, master's in Turin, Ph.D. in Pure and Applied Mathematics at Politecnico di Torino and IIT (2021–2025), with Walter Rocchia and Lamberto Rondoni.</p>
+      <p class="rise"><strong>Electrostatics of biomolecules.</strong> The Poisson–Boltzmann equation describes how charged molecules behave in salt water. I wrote <a href="https://vdiflorio.github.io/nextgenpb_tutorial/">NextGenPB</a>, a finite element solver with analytical super-resolution.</p>
+      <p class="rise"><strong>MOX, Politecnico di Milano.</strong> Post-doctoral research fellow since 2025 in the Modeling and Scientific Computing lab, working on physics-informed and physics-guided neural networks.</p>
+      <p class="rise"><strong>Open to collaborations</strong> in computational physics, scientific machine learning and high-performance scientific software. Email is quickest; code is on <a href="https://github.com/vdiflorio">GitHub</a>.</p>
+    </div>
+  </section>
+
+  <section class="research wrap" id="research" aria-labelledby="research-title">
+    <h2 id="research-title" class="rise">Research</h2>
+    <div class="research__grid">
+      <figure class="rise">
+        <img src="img/molecola.webp" width="1100" height="1528" alt="A protein surface coloured by electrostatic potential, red patches negative and blue patches positive." loading="lazy">
+        <figcaption>Electrostatic potential on a protein surface, computed with NextGenPB. Red is negative, blue positive.</figcaption>
+      </figure>
+      <ul class="topics">
+        <li class="rise"><h3>NextGenPB</h3><p>A finite element Poisson–Boltzmann solver with analytical super-resolution. The mesh is fine only where the molecular surface is, and coarse everywhere else.</p></li>
+        <li class="rise"><h3>Forces between proteins</h3><p>Electrostatic forces and binding energies from the same solution, accurate enough to tell how two proteins approach each other.</p></li>
+        <li class="rise"><h3>Physics-informed learning</h3><p>PINNs and physics-guided networks for electrostatics: the physical law is built into the model, so it needs less data and cannot break it.</p></li>
+        <li class="rise"><h3>Far from equilibrium</h3><p>Heat conduction in one-dimensional chains, state equations for oscillator chains, and the Boltzmann equation, connecting rigorous results to realistic models.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="band-title">
+    <div class="wrap">
+      <h2 id="band-title" class="rise">Solved, not drawn</h2>
+      <div class="band__grid">
+        <figure class="rise"><img src="img/barnase-barstar.webp" width="1600" height="1200" alt="Two proteins, barnase and barstar, coloured by potential, with arrows for the electrostatic force on each." loading="lazy"><figcaption>Barnase and barstar: the electrostatic force on each protein.</figcaption></figure>
+        <figure class="rise"><img src="img/spike.webp" width="1043" height="1279" alt="A spike protein coloured by potential, wrapped in electric field lines." loading="lazy"><figcaption>A spike protein: surface potential and field lines.</figcaption></figure>
+        <figure class="rise"><img src="img/octree.webp" width="1600" height="782" alt="An octree grid that becomes finer only near the molecular surface, with a zoomed detail." loading="lazy"><figcaption>The octree grid, refined only near the surface.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="pubs wrap" id="publications" aria-labelledby="pubs-title">
+    <h2 id="pubs-title" class="rise">Publications</h2>
+    <h3 class="pubs__year">2026</h3>
+    <ol>
+      <li class="rise"><a href="https://doi.org/10.1063/5.0320325">Computing nonequilibrium transport from short-time transients: from Lorentz gas to heat conduction in one-dimensional chains</a><span class="journal">J. Chem. Phys.</span><span class="doi">Carbone, Di Florio, Lepri, Rondoni</span></li>
+      <li class="rise"><a href="https://doi.org/10.1021/acs.jcim.5c02287">Patch-based ray tracing in NanoShaper boosts molecular surface computation</a><span class="journal">J. Chem. Inf. Model.</span><span class="doi">Mazzeo, Di Florio, Rocchia, Decherchi</span></li>
+    </ol>
+    <h3 class="pubs__year">2025</h3>
+    <ol>
+      <li class="rise"><a href="https://doi.org/10.1016/j.cpc.2025.109816">NextGenPB: an analytically-enabled super resolution tool for solving the Poisson–Boltzmann equation featuring local (de)refinement</a><span class="journal">Comput. Phys. Commun.</span><span class="doi">Di Florio et al.</span></li>
+    </ol>
+    <h3 class="pubs__year">2024</h3>
+    <ol>
+      <li class="rise"><a href="https://doi.org/10.1140/epjp/s13360-024-05419-1">Microscopic state equation for oscillator chains</a><span class="journal">Eur. Phys. J. Plus</span><span class="doi">Di Florio, Giberti, Rondoni, Zhao</span></li>
+      <li class="rise"><a href="https://doi.org/10.3390/e26020171">Probability turns material: the Boltzmann equation</a><span class="journal">Entropy</span><span class="doi">Rondoni, Di Florio</span></li>
+    </ol>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="wrap rise">Contact</h2>
+    <ul class="rows">
+      <li>MOX, Politecnico di Milano</li>
+      <li><a href="https://maps.google.com/?q=Piazza+Leonardo+da+Vinci+32+Milano">Piazza Leonardo da Vinci 32</a></li>
+      <li>20133 Milano</li>
+      <li><a href="mailto:vincenzo.diflorio@polimi.it">Email me</a></li>
+    </ul>
+    <figure class="contact__fig"><img src="img/nlpb.webp" width="1200" height="1200" alt="Nonlinear Poisson–Boltzmann solution on a branched molecule." loading="lazy"></figure>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div>
+      <p class="footer__invite">Let's work on<br>the hard part</p>
+      <a class="btn btn--light" href="mailto:vincenzo.diflorio@polimi.it">vincenzo.diflorio@polimi.it</a>
+    </div>
+    <ul class="footer__links">
+      <li><a href="https://github.com/vdiflorio">GitHub</a></li>
+      <li><a href="https://scholar.google.com/citations?user=t_W18NgAAAAJ">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-9839-1518">ORCID</a></li>
+      <li><a href="https://www.linkedin.com/in/vincenzo-di-florio-269b87401">LinkedIn</a></li>
+    </ul>
+  </div>
+  <div class="footer__legal"><span>© 2026 Vincenzo Di Florio</span><span>Figures: own work, computed with NextGenPB</span></div>
+  <p class="footer__name" aria-hidden="true">Di Florio</p>
+</footer>
+
+<script>
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
+    es.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), (i % 4) * 80); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' }) : null;
+  document.querySelectorAll('.rise').forEach((el) => io ? io.observe(el) : el.classList.add('in'));
+</script>
+</body>
+</html>
