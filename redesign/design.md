@@ -139,9 +139,35 @@ Non è una direzione pescata da `draw.mjs`: è una sintesi su richiesta, documen
 - **Citazione di Winston Wolf:** tenuta come didascalia della foto, nel carattere normale (non più monospace).
 - **Misure:** `inspect.mjs` 0 FAIL, 2 WARN (nessun video; poco movimento, voluto).
 
+## D, secondo giro (2026-11-08)
+
+Indicazioni di Vincenzo, tutte applicate in `alternative/d-ibrida.html`:
+
+1. **MOX è un laboratorio del Dipartimento di Matematica** → "MOX laboratory, Department of Mathematics, Politecnico di Milano" ovunque.
+2. **Nuovo filone: interazioni proteina–proteina e affinità di legame** → primo tema della Ricerca e frase sotto il nome;
+   la figura della Ricerca diventa Barnase–Barstar (forze tra due proteine), più pertinente della singola molecola.
+3. **CV completo** (`Curriculum.pdf`, novembre 2026) → spostato su `assets/pdf/CV.pdf`, lo stesso indirizzo di prima,
+   così i link esterni continuano a funzionare. Il CV di aprile resta nella storia git e in `al-folio-backup`.
+   Dal CV entrano nel sito: articolo JBC 2026, corsi AMSC e Fisica Matematica (PoliMi, 2026–), grant PRACE-FENIX (PI),
+   periodi al CUNY (2024) e alla SISSA (2018), talk e poster recenti.
+4. **D sì, ma palette minimalista più decisa** → bianco pieno e quasi-nero, accento saturo, titoli Zodiak 400 (non più 300).
+   Tre varianti da scegliere con il selettore in cima al prototipo (solo per la prova, sparirà):
+   - *Bianco e rosso* (default): fondo `#ffffff`, superficie `#f1f1f0`, testo `#0c0c0d`, secondario `#4b4c50`, accento `#c4122f` (scuro: `#ff5a6a`).
+   - *Bianco e blu*: superficie `#eff1f5`, testo `#0b0d12`, secondario `#4a4e57`, accento `#1240c4` (scuro: `#86a6ff`).
+   - *Grigio e oxblood*: fondo `#e6e6e4`, superficie `#d9d9d6`, testo `#0e0e0f`, secondario `#47484c`, accento `#7d0c14` (scuro: `#ff6a4d`).
+   Rosso e blu sono i due poli della mappa del potenziale. Tema scuro comune: fondo `#141517`, testo `#f2f2f3`.
+5. **Navigazione in cima con tutte le sezioni** → Research · Projects · Publications · Teaching · CV, visibile anche sul telefono.
+   Nuove sezioni Projects (NextGenPB, Analytical Electrostatics, 1D chains, dai repository del vecchio sito) e Teaching (5 corsi).
+6. **PGNN meno in evidenza** → niente più titolo dedicato: è mezza frase dentro "Poisson–Boltzmann solvers" ("data-driven surrogates").
+
+Misure: `inspect.mjs --allow few-pictures` 0 FAIL con tutte e tre le palette; unico WARN "nessun video".
+Le card dei progetti sono diventate righe (la skill vieta file di card identiche).
+
 ## Decisioni ancora aperte
 
-- [ ] Quale direzione (fase 1): D è la candidata, in attesa di conferma o correzioni.
+- [ ] Palette: rosso, blu o oxblood.
+- [ ] D confermata come direzione?
+- [ ] `CV_industry.pdf` è ancora di aprile 2026 e nel prototipo non è linkato: aggiornarlo o toglierlo.
 - [ ] Citazione di Winston Wolf: tenerla (in carattere normale) o toglierla.
 - [ ] Lingua: solo inglese o anche italiano.
 - [ ] Font self-hosted nel sito finale (sì, salvo licenze: Zodiak ha licenza Fontshare, da verificare per il self-hosting).

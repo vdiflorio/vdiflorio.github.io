@@ -44,7 +44,8 @@ pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
   - C. Brutalista — `redesign/alternative/c-brutalista.html`
 - [x] Primo giro di feedback (2026-11-08): C scartata; A e B troppo lontane dal sito di prima e con troppe immagini.
 - [x] Prototipo D, ibrido A + B vicino al sito di prima — `redesign/alternative/d-ibrida.html`.
-- [ ] **Scelta di Vincenzo** su D (o correzioni).
+- [x] Secondo giro su D (2026-11-08): MOX come laboratorio del Dipartimento, protein–protein binding, CV completo, palette più decisa (tre varianti), navigazione completa, PGNN ridimensionate.
+- [ ] **Scelta della palette** e conferma di D.
 
 ### Fase 2 — Direzione definitiva e testi
 
@@ -59,8 +60,9 @@ pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
       `docs/repositories/` (o fusa nella home), `docs/404.html`, `docs/.nojekyll`.
 - [ ] CSS unico con i token della direzione; font self-hosted (niente Google Fonts a runtime).
 - [ ] Pubblicazioni: a mano per ora (6 lavori); script `papers.bib → HTML` se diventano tante.
-- [ ] CV: per ora si tengono i due PDF attuali (`/assets/pdf/CV.pdf`, `/assets/pdf/CV_industry.pdf`)
-      allo stesso indirizzo; la pagina CV si aggiorna più avanti.
+- [x] CV completo (novembre 2026) in `/assets/pdf/CV.pdf`, stesso indirizzo di prima.
+- [ ] `CV_industry.pdf` (aprile 2026): aggiornare o togliere.
+- [ ] Pagina CV in HTML generata dai contenuti del PDF (fase 3).
 - [ ] Anteprima locale + screenshot → ok di Vincenzo.
 
 ### Fase 4 — Immagini e animazioni
