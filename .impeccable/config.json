@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "redesign/alternative/a-minimale.html"
+        ],
+        "createdAt": "2026-11-08T12:27:53.925Z",
+        "reason": "Claude: static scan assumes body ground #e2e2e2; that text sits on the #7d0c14 field. Rendered scan and inspect.mjs report no contrast issue."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "redesign/alternative/a-minimale.html"
+        ],
+        "createdAt": "2026-11-08T12:27:53.938Z",
+        "reason": "Claude: static scan misses the .wrap padding (var(--margin), 20-40px). Rendered scan only flagged the contact rows, which were fixed."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "redesign/alternative/c-brutalista.html"
+        ],
+        "createdAt": "2026-11-08T12:27:53.949Z",
+        "reason": "Claude: static scan misses section padding var(--margin). Rendered scan only flagged the contact rows, which were fixed."
+      },
+      {
+        "rule": "buried-raster",
+        "value": "*",
+        "files": [
+          "redesign/alternative/b-high-end.html"
+        ],
+        "createdAt": "2026-11-08T12:27:53.960Z",
+        "reason": "Claude: opacity 0 images are the inactive layers of the publications crossfade; each one becomes visible when its paper is active. Rendered scan reports nothing."
+      }
+    ]
+  }
+}

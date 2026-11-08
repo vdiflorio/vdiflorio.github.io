@@ -114,7 +114,7 @@ h2 {
 
 /* ---------- Intro: lead line over four columns ---------- */
 .intro { background: var(--field); color: var(--field-ink); padding-block: 30svh 120px; }
-.intro__lead { font-size: var(--step-lead); line-height: 1.25; max-width: 42ch; margin: 0 0 72px; }
+.intro__lead { font-size: var(--step-lead); line-height: 1.3; max-width: 42ch; margin: 0 0 72px; }
 .intro__cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 0; }
 .intro__cols p { margin: 0; font-size: var(--step-body); line-height: 1.5; color: var(--field-soft); }
 .intro__cols strong { color: var(--field-ink); font-weight: 500; }
@@ -151,7 +151,7 @@ figcaption { font-size: var(--step-small); color: var(--muted); margin-top: 12px
 .rows li {
   font-family: var(--display); text-transform: uppercase;
   font-size: clamp(36px, 6vw, 92px); line-height: 1; letter-spacing: -0.01em;
-  padding: 36px var(--margin) 18px;
+  padding: 0.55em var(--margin) 0.32em;
 }
 .rows li:nth-child(odd) { background: var(--surface); }
 .rows a { text-decoration: none; }
@@ -198,7 +198,7 @@ figcaption { font-size: var(--step-small); color: var(--muted); margin-top: 12px
   .band__grid { grid-template-columns: 1fr; }
   .band__grid figure:last-child { grid-column: auto; }
   .pubs li { grid-template-columns: 1fr; gap: 4px; }
-  .rows li { font-size: 9.6vw; padding: 28px var(--margin) 14px; }
+  .rows li { font-size: 9.6vw; }
   .footer__legal { bottom: calc(20vw + 16px); flex-direction: column; gap: 4px; }
   .contact__fig { display: none; }
   .footer__name { font-size: 34vw; }
