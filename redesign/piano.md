@@ -20,7 +20,7 @@ Le decisioni di stile e il loro perché sono in [design.md](design.md).
 | Cosa | Comando | Indirizzo |
 | --- | --- | --- |
 | Alternative di stile (fase 1) | `python3 -m http.server 8000` dalla radice del repo | http://localhost:8000/redesign/alternative/ |
-| Nuovo sito (dalla fase 3) | `python3 -m http.server 8000 -d docs` | http://localhost:8000/ |
+| Nuovo sito (dalla fase 3) | `python3 -m http.server 8001 -d docs` | http://localhost:8001/ |
 | Vecchio sito al-folio | `git switch al-folio-backup && docker compose up` | http://localhost:8080/ |
 
 Il nuovo sito è statico: quello che si vede con `http.server` è esattamente quello che GitHub Pages
@@ -49,23 +49,30 @@ pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
 
 **Fase 1 chiusa.**
 
-### Fase 2 — Direzione definitiva e testi
+### Fase 2 — Direzione definitiva e testi ✅ (2026-11-09)
 
-- [ ] Scheda completa della direzione scelta (tipi, palette, composizione di ogni sezione).
-- [ ] Testi: home, ricerca, pubblicazioni, didattica, contatti (in inglese; italiano da valutare).
-- [ ] Mappa delle pagine e degli indirizzi (vedi sotto).
-- [ ] Decidere cosa fare della citazione di Winston Wolf.
+- [x] Direzione D confermata (vedi design.md).
+- [x] Testi in inglese per home, pubblicazioni, CV, didattica, contatti, ripresi dal CV di novembre 2026.
+- [x] Mappa delle pagine e degli indirizzi (sotto).
+- [x] Citazione di Winston Wolf tenuta come didascalia della foto.
+- [x] CV: solo l'email del Politecnico (tolta la gmail).
 
-### Fase 3 — Costruzione del nuovo sito in `docs/`
+### Fase 3 — Costruzione del nuovo sito in `docs/` ✅ (2026-11-09, in attesa dell'ok)
 
-- [ ] Struttura: `docs/index.html`, `docs/publications/`, `docs/cv/`, `docs/teaching/`,
-      `docs/repositories/` (o fusa nella home), `docs/404.html`, `docs/.nojekyll`.
-- [ ] CSS unico con i token della direzione; font self-hosted (niente Google Fonts a runtime).
-- [ ] Pubblicazioni: a mano per ora (6 lavori); script `papers.bib → HTML` se diventano tante.
+- [x] Pagine: `docs/index.html`, `docs/publications/`, `docs/cv/`, `docs/404.html`, `docs/.nojekyll`;
+      `docs/teaching/`, `docs/repositories/`, `docs/projects/` reindirizzano alle sezioni della home.
+- [x] Un solo CSS (`docs/assets/css/site.css`) e un solo JS (`docs/assets/js/site.js`, tema e entrate).
+- [x] Hanken Grotesk ospitato nel sito (OFL); Zodiak dal CDN di Fontshare (licenza da verificare per l'hosting).
+- [x] SEO: `<title>` e description per pagina, canonical, Open Graph con `og.jpg` 1200×630 e URL assoluto,
+      schema.org `Person` con ORCID/Scholar/GitHub/LinkedIn, `sitemap.xml`, `robots.txt`,
+      verifica Google (file + meta tag), favicon SVG.
+- [x] Pubblicazioni a mano (6 lavori); in home le tre selezionate.
+- [x] Controlli: inspect.mjs 0 FAIL su home, publications, CV (la 404 ha solo "poco movimento", voluto);
+      lint.mjs pulito; impeccable sul rendering pulito; link interni tutti 200; link esterni verificati.
 - [x] CV completo (novembre 2026) in `/assets/pdf/CV.pdf`, stesso indirizzo di prima.
 - [x] Sorgenti dei CV in `cv/` (`cv-academic.tex`, `cv-industry.tex`, stile comune `cv-style.sty`), con l'aspetto del sito; `make` produce `CV.pdf` e `CV_industry.pdf` (vedi `cv/README.md`).
 - [ ] Pagina CV in HTML generata dai contenuti del PDF (fase 3).
-- [ ] Anteprima locale + screenshot → ok di Vincenzo.
+- [ ] **Anteprima locale + ok di Vincenzo.**
 
 ### Fase 4 — Immagini e animazioni
 

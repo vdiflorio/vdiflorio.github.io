@@ -181,9 +181,15 @@ Le card dei progetti sono diventate righe (la skill vieta file di card identiche
   fallisce, la pagina resta leggibile.
 - Misure: `inspect.mjs --allow few-pictures` 0 FAIL, 1 WARN (nessun video); impeccable sul rendering: nessuna segnalazione.
 
+## Sito costruito (2026-11-09)
+
+- Il sito vero è in `docs/`, servito così com'è da GitHub Pages (nessuna build).
+- Pagine: home (D), Publications (tutti gli articoli con DOI, talk e poster), CV (essenziale + i due PDF), 404.
+- Eccezioni dichiarate all'inspector: `few-pictures` (scelta di Vincenzo), `still-page` sulla sola 404.
+- CV in PDF: stesso oxblood `#7D0C14` del sito per nome, titoli e link; solo l'email del Politecnico.
+
 ## Decisioni ancora aperte
 
-- [ ] Email gmail personale nei CV pubblici: tenerla o lasciare solo quella del Politecnico.
 - [ ] Zodiak: licenza Fontshare da verificare prima di ospitare i file del font nel sito (fase 3).
 - [ ] Citazione di Winston Wolf: tenerla (in carattere normale) o toglierla.
 - [ ] Lingua: solo inglese o anche italiano.

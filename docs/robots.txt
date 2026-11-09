@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vdiflorio.github.io/sitemap.xml
