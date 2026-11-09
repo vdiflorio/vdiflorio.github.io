@@ -1,6 +1,6 @@
 # Piano del redesign — vdiflorio.github.io
 
-Ultimo aggiornamento: 2026-11-08 · branch di lavoro: `redesign`
+Ultimo aggiornamento: 2026-11-09 · branch di lavoro: `redesign`
 
 Obiettivo: sostituire il sito al-folio con un sito scritto da zero (HTML e CSS statici, nessun
 tema, nessuna build), più chiaro, più veloce e riconoscibilmente mio, mantenendo gli stessi indirizzi.
@@ -66,13 +66,14 @@ pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
 - [x] SEO: `<title>` e description per pagina, canonical, Open Graph con `og.jpg` 1200×630 e URL assoluto,
       schema.org `Person` con ORCID/Scholar/GitHub/LinkedIn, `sitemap.xml`, `robots.txt`,
       verifica Google (file + meta tag), favicon SVG.
-- [x] Pubblicazioni a mano (6 lavori); in home le tre selezionate.
+- [x] Pubblicazioni a mano (6 lavori); in home le tre selezionate (dal 2026-11-09: JCP 2026 trasporto fuori equilibrio, CPC 2025 NextGenPB, EPJ Plus 2024 equazione di stato microscopica).
 - [x] Controlli: inspect.mjs 0 FAIL su home, publications, CV (la 404 ha solo "poco movimento", voluto);
       lint.mjs pulito; impeccable sul rendering pulito; link interni tutti 200; link esterni verificati.
 - [x] CV completo (novembre 2026) in `/assets/pdf/CV.pdf`, stesso indirizzo di prima.
 - [x] Sorgenti dei CV in `cv/` (`cv-academic.tex`, `cv-industry.tex`, stile comune `cv-style.sty`), con l'aspetto del sito; `make` produce `CV.pdf` e `CV_industry.pdf` (vedi `cv/README.md`).
-- [ ] Pagina CV in HTML generata dai contenuti del PDF (fase 3).
-- [ ] **Anteprima locale + ok di Vincenzo.**
+- [x] Pagina CV in HTML completa, con tutti i contenuti del PDF accademico (2026-11-09; esclusa solo l'autorizzazione al trattamento dei dati, che resta nel PDF).
+- [x] Tablet (768 px): sotto gli 860 px i paragrafi del CV e delle pubblicazioni arrivano al margine destro (prima la pagina CV risultava non centrata, FAIL `off-centre`).
+- [ ] **Anteprima locale + ok di Vincenzo.** (anteprima avviata il 2026-11-09, primo giro di correzioni fatto)
 
 ### Fase 4 — Immagini e animazioni
 
@@ -118,7 +119,6 @@ Il tutorial di NextGenPB (`/nextgenpb_tutorial/`) è un repository separato e no
 
 ## Da confermare
 
-- Indirizzo per i contatti: MOX, Dipartimento di Matematica, Politecnico di Milano,
+- Indirizzo per i contatti (chiesto il 2026-11-09, in attesa di risposta): MOX, Dipartimento di Matematica, Politecnico di Milano,
   Piazza Leonardo da Vinci 32, 20133 Milano.
 - Didascalie delle figure (quale molecola è in ciascuna; vedi design.md → Immagini).
-- Lingua del sito: solo inglese, o inglese + italiano.

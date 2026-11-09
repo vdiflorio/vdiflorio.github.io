@@ -188,13 +188,26 @@ Le card dei progetti sono diventate righe (la skill vieta file di card identiche
 - Eccezioni dichiarate all'inspector: `few-pictures` (scelta di Vincenzo), `still-page` sulla sola 404.
 - CV in PDF: stesso oxblood `#7D0C14` del sito per nome, titoli e link; solo l'email del Politecnico.
 
+## Primo giro sull'anteprima (2026-11-09)
+
+- **Pubblicazioni selezionate in home**, scelte da Vincenzo: *Computing nonequilibrium transport from short-time transients*
+  (JCP 2026), *NextGenPB* (CPC 2025), *Microscopic state equation for oscillator chains* (EPJ Plus 2024). L'articolo JBC
+  esce dalla home e resta in Publications e nel CV.
+- **Pagina CV completa**: le stesse sezioni del PDF accademico (interessi di ricerca, formazione, esperienza,
+  articoli, talk, poster, didattica, scuole, grant, competenze), con i componenti già usati nelle altre pagine.
+  L'autorizzazione al trattamento dei dati resta solo nel PDF.
+- **Margini su tablet**: sotto gli 860 px i paragrafi del CV e delle pubblicazioni non hanno più la larghezza massima,
+  così arrivano al margine destro (a 768 px la pagina CV risultava spostata a sinistra, 31 px contro 75 px).
+- Misure: `inspect.mjs --allow few-pictures` 0 FAIL su home, Publications e CV, unico WARN "nessun video"; `lint.mjs` pulito.
+
 ## Decisioni ancora aperte
 
 - [ ] Zodiak: licenza Fontshare da verificare prima di ospitare i file del font nel sito (fase 3).
-- [ ] Citazione di Winston Wolf: tenerla (in carattere normale) o toglierla.
-- [ ] Lingua: solo inglese o anche italiano.
+- [x] Citazione di Winston Wolf: tenuta, in carattere normale, come didascalia della foto.
+- [x] Lingua: solo inglese.
 - [ ] Font self-hosted nel sito finale (sì, salvo licenze: Zodiak ha licenza Fontshare, da verificare per il self-hosting).
 
 ## Registro delle modifiche a questo file
 
 - 2026-11-08 — Prima stesura: audit, regole, immagini, tre direzioni.
+- 2026-11-09 — Pubblicazioni selezionate cambiate; pagina CV completa; correzione dei margini su tablet; chiuse le decisioni sulla citazione e sulla lingua.

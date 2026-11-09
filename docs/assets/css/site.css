@@ -207,6 +207,8 @@ h2 { font: 400 var(--step-head)/1.05 var(--display); letter-spacing: -0.015em; m
   .pubs li { grid-template-columns: 1fr; gap: 4px; }
   .courses li, .entries li { grid-template-columns: 1fr; }
   .courses time, .entries time { grid-row: auto; grid-column: 1; }
+  /* One column on tablets and phones: text runs to the right margin, so the page stays centred. */
+  .entries p, .entries ul, .plain li, .pubs .title, .pubs .meta { max-width: none; }
 }
 @media (max-width: 520px) {
   .nav .theme { order: 2; margin-left: auto; }

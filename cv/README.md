@@ -25,5 +25,6 @@ Serve LuaLaTeX. Su questo Mac il `lualatex` di MacPorts ha il formato rotto: usa
 - Cambia la data in fondo alle pagine: `\renewcommand{\lastupdated}{...}` o direttamente in `cv-style.sty`.
 - Una voce con data: `\entry{Titolo}{Data}{Luogo}`; un dettaglio sotto: `\detail{Etichetta}{Testo}`.
 - Un DOI cliccabile: `\doi{10.xxxx/...}`.
-- Quando aggiungi un articolo, aggiungilo in entrambi i file (nel CV per le aziende solo se è tra i più rilevanti)
-  e nella home del sito se è tra le pubblicazioni selezionate.
+- Quando aggiungi un articolo (o un talk, un poster, un corso), aggiungilo in entrambi i file (nel CV per le aziende solo
+  se è tra i più rilevanti) e nel sito: `docs/publications/index.html`, la pagina CV `docs/cv/index.html` (che riporta
+  tutto il CV accademico) e la home `docs/index.html` se è tra le pubblicazioni selezionate.
