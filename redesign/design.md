@@ -200,12 +200,29 @@ Le card dei progetti sono diventate righe (la skill vieta file di card identiche
   così arrivano al margine destro (a 768 px la pagina CV risultava spostata a sinistra, 31 px contro 75 px).
 - Misure: `inspect.mjs --allow few-pictures` 0 FAIL su home, Publications e CV, unico WARN "nessun video"; `lint.mjs` pulito.
 
+## Verifiche finali (fase 5, 2026-11-09)
+
+Script di controllo su Chrome headless (helper CDP della skill), pagine home, Publications, CV, 404, temi chiaro e scuro, 1440 e 390 px.
+
+| Controllo | Esito |
+| --- | --- |
+| Inspector | 0 FAIL su tutte le pagine. WARN: nessun video (ovunque, voluto); sulla 404 anche il vuoto sotto il testo (voluto, `still-page`). |
+| Contrasto | Nessun testo sotto soglia; minimo 7,7:1 nel tema chiaro, 5,8:1 nello scuro. |
+| Tastiera | Tutti i link e il pulsante raggiungibili con Tab, anello di focus visibile (2 px, colore d'accento). **Corretto**: un link nell'ultimo 8% dello schermo riceveva il focus mentre il suo blocco era ancora a opacità 0; ora il focus fa entrare subito il blocco (`site.js`). "Skip to content" aggiunto alla 404 e allineato al margine della pagina. |
+| Movimento ridotto | Con `prefers-reduced-motion: reduce` nessun elemento resta nascosto, nessuna animazione, scroll non animato. |
+| Tema | Il pulsante cambia tema, aggiorna `aria-pressed`, salva la scelta e la porta sulle altre pagine. |
+| Peso | Home ~146 KB (HTML 27, CSS 12, JS 1, Hanken 48, Zodiak 22, immagini 37); compressi da GitHub Pages HTML e CSS scendono a 8 e 3,5 KB. Obiettivo < 300 KB rispettato. |
+| SEO | Titolo, description, canonical, Open Graph con URL assoluto su ogni pagina; la 404 è `noindex` e senza canonical; i reindirizzamenti sono `noindex` con canonical alla home. |
+| Link | Interni tutti 200. Esterni: GitHub, ORCID, Scholar, MOX, tutorial NextGenPB 200; DOI risolti verso gli articoli giusti (ACS, AIP, MDPI rispondono 403 ai robot, LinkedIn 999). |
+
 ## Decisioni ancora aperte
 
-- [ ] Zodiak: licenza Fontshare da verificare prima di ospitare i file del font nel sito (fase 3).
+- [ ] Zodiak: licenza letta il 2026-11-09 (ITF Free Font License 2.0, 17 ago 2026). Sì al self-hosting per il proprio sito;
+      no alla distribuzione tramite "repository" o "publicly accessible servers"; no a subsetting e conversioni.
+      Un repository GitHub pubblico è una zona grigia: per ora resta il CDN di Fontshare.
 - [x] Citazione di Winston Wolf: tenuta, in carattere normale, come didascalia della foto.
 - [x] Lingua: solo inglese.
-- [ ] Font self-hosted nel sito finale (sì, salvo licenze: Zodiak ha licenza Fontshare, da verificare per il self-hosting).
+- [x] Hanken Grotesk ospitato nel sito (OFL); Zodiak vedi sopra.
 
 ## Registro delle modifiche a questo file
 

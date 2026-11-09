@@ -66,7 +66,7 @@ a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .page { width: min(var(--page), 100% - 2 * var(--margin)); margin-inline: auto; }
 h2 { font: 400 var(--step-head)/1.05 var(--display); letter-spacing: -0.015em; margin: 0 0 40px; }
-.skip { position: absolute; left: var(--margin); top: -100px; z-index: 10; padding: 10px 16px; background: var(--ink); color: var(--bg); }
+.skip { position: absolute; left: max(var(--margin), (100% - var(--page)) / 2); top: -100px; z-index: 10; padding: 10px 16px; background: var(--ink); color: var(--bg); }
 .skip:focus { top: 12px; }
 .btn {
   display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px;

@@ -86,13 +86,18 @@ pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
 
 ### Fase 5 — Verifica
 
-- [ ] `inspect.mjs` 0 FAIL a 1440 / 768 / 390 su ogni pagina; `lint.mjs` pulito.
-- [ ] Accessibilità: contrasto, focus visibile, alt delle figure, navigazione da tastiera, `prefers-reduced-motion`.
-- [ ] Performance: niente jQuery/MathJax/Bootstrap; obiettivo < 300 KB per la home.
-- [ ] SEO: `<title>` e meta description per pagina, `og:image` con URL assoluto, `canonical`,
-      schema.org `Person` con ORCID/Scholar/GitHub/LinkedIn puliti, `sitemap.xml`, `robots.txt`,
-      file di verifica Google `google6eec2dc6df5f6150.html` + meta tag Search Console.
-- [ ] Tutti i link controllati (DOI, ORCID, NextGenPB tutorial, PDF del CV).
+Fatta il 2026-11-09; dettagli in design.md → "Verifiche finali".
+
+- [x] `inspect.mjs` 0 FAIL a 1440 / 768 / 390 su home, Publications, CV e 404; `lint.mjs` pulito.
+- [x] Accessibilità: contrasto (minimo 7,7:1 in chiaro, 5,8:1 in scuro), focus visibile su ogni elemento, alt delle
+      figure, navigazione da tastiera (corretto: un link non può più ricevere il focus mentre è ancora nascosto
+      dall'entrata), "Skip to content" anche sulla 404, `prefers-reduced-motion` (niente nascosto, niente animato).
+- [x] Tema chiaro e scuro su ogni pagina; il pulsante cambia tema, lo ricorda e lo porta sulle altre pagine.
+- [x] Performance: home ~146 KB in tutto (Zodiak compreso, HTML e CSS non compressi); nessun errore in console.
+- [x] SEO: titoli, description, canonical, Open Graph, `sitemap.xml`, `robots.txt`, verifica Google; tolto il canonical dalla 404.
+- [x] Link interni tutti 200; link esterni verificati (i 403 di ACS, AIP, MDPI e il 999 di LinkedIn sono blocchi
+      anti-robot: i DOI arrivano agli articoli giusti).
+- [ ] Zodiak: licenza letta (ITF FFL 2.0); decidere se restare sul CDN o ospitarlo (vedi design.md).
 
 ### Fase 6 — Pubblicazione
 

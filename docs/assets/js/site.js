@@ -22,4 +22,9 @@
   }), { rootMargin: '0px 0px -8% 0px' });
   root.classList.add('anim');
   items.forEach((el) => io.observe(el));
+  // A link reached with the keyboard must never sit inside a block that has not come in yet.
+  document.addEventListener('focusin', (e) => {
+    const el = e.target.closest && e.target.closest('.rise');
+    if (el && !el.classList.contains('in')) { el.classList.add('in'); io.unobserve(el); }
+  });
 })();
