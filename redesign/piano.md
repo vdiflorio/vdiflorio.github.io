@@ -26,6 +26,17 @@ Le decisioni di stile e il loro perché sono in [design.md](design.md).
 Il nuovo sito è statico: quello che si vede con `http.server` è esattamente quello che GitHub Pages
 pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
 
+## Prompt per le prossime sessioni
+
+Ognuno si incolla come primo messaggio di una sessione nuova, nell'ordine:
+
+1. [prompt-fase4.md](prompt-fase4.md) — prova della figura animata di NextGenPB (facoltativa).
+2. [prompt-controllo-finale.md](prompt-controllo-finale.md) — controllo con impeccable: caratteri e tic da IA.
+3. [prompt-fase6.md](prompt-fase6.md) — pubblicazione, passo per passo, con i punti in cui fermarsi.
+
+Lo script [tools/verifica-online.sh](tools/verifica-online.sh) controlla in sola lettura il sito pubblicato
+(`bash redesign/tools/verifica-online.sh`) o l'anteprima (`… http://127.0.0.1:8001`).
+
 ## Fasi
 
 ### Fase 0 — Analisi e backup ✅
