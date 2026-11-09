@@ -4,8 +4,8 @@ Sorgenti LaTeX dei due curriculum, con lo stesso aspetto del sito (Zodiak + Hank
 
 | File | Cosa | PDF prodotto |
 | --- | --- | --- |
-| `cv-academic.tex` | CV completo, per l'accademia (era `main.tex`) | `assets/pdf/CV.pdf` |
-| `cv-industry.tex` | CV per le aziende, due pagine | `assets/pdf/CV_industry.pdf` |
+| `cv-academic.tex` | CV completo, per l'accademia (era `main.tex`) | `docs/assets/pdf/CV.pdf` |
+| `cv-industry.tex` | CV per le aziende, due pagine | `docs/assets/pdf/CV_industry.pdf` |
 | `cv-style.sty` | Stile comune: caratteri, colori, voci con data | — |
 | `get-fonts.sh` | Scarica i caratteri in `cv/fonts/` (non versionata) | — |
 
@@ -13,7 +13,7 @@ Sorgenti LaTeX dei due curriculum, con lo stesso aspetto del sito (Zodiak + Hank
 
 ```sh
 cd cv
-make            # scarica i caratteri se mancano, compila e copia i PDF in assets/pdf/
+make            # scarica i caratteri se mancano, compila e copia i PDF in docs/assets/pdf/
 make clean      # cancella cv/build/
 ```
 

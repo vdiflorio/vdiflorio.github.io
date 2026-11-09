@@ -1,16 +1,9 @@
-_site
-.bundle
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-.DS_store
-.ruby-version
-.tweet-cache
-Gemfile.lock
-assets/libs/
-node_modules/
-vendor
-.idea
+# macOS
+.DS_Store
+
+# Claude Code: local settings of this machine
+.claude/settings.local.json
+
 # CV sources: downloaded fonts and LaTeX build files
 cv/fonts/
 cv/build/

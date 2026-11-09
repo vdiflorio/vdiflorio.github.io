@@ -96,8 +96,14 @@ pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
 
 ### Fase 6 — Pubblicazione
 
-- [ ] Rimuovere dal branch i file di al-folio e i workflow GitHub Actions di al-folio.
-- [ ] Merge di `redesign` in `main` (solo dopo l'ok finale in locale).
+- [x] Rimuovere dal branch i file di al-folio e i workflow GitHub Actions di al-folio (2026-11-09: 336 file tracciati
+      tolti, restano `docs/`, `cv/`, `redesign/`, `README.md`, `LICENSE`, `.gitignore`, `.impeccable/`; cancellati anche
+      dal disco `_site/`, `node_modules/`, `.jekyll-cache/`, `.tweet-cache/` e le cartelle vuote di al-folio).
+- [x] `LICENSE`: MIT a nome di Vincenzo Di Florio (al posto di quella di al-folio), con le licenze di terze parti
+      (Hanken Grotesk OFL, Zodiak Fontshare, PDB 1BRS CC0).
+- [x] `cv/Makefile` copia i PDF solo in `docs/assets/pdf/`; `README.md` riscritto (sito, CV, pubblicazione); `.gitignore` ripulito.
+- [ ] Merge di `redesign` in `main` (solo dopo l'ok finale in locale). Sarà un fast-forward: `main`, `al-folio-backup` e
+      `al-folio-final` puntano tutti a `e5a646a`, quindi `main` diventa il sito nuovo e `al-folio-backup` resta il vecchio.
 - [ ] Su GitHub: Settings → Pages → *Deploy from a branch* → `main` / `/docs` (passaggio manuale).
 - [ ] Verifica online, Search Console, anteprime social (LinkedIn).
 - [ ] Rollback se serve: Pages di nuovo su `gh-pages` oppure ripristino da `al-folio-backup`.
