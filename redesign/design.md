@@ -163,11 +163,28 @@ Indicazioni di Vincenzo, tutte applicate in `alternative/d-ibrida.html`:
 Misure: `inspect.mjs --allow few-pictures` 0 FAIL con tutte e tre le palette; unico WARN "nessun video".
 Le card dei progetti sono diventate righe (la skill vieta file di card identiche).
 
+## D, terzo giro (2026-11-09)
+
+- **Direzione D confermata**, con la palette **grigio e oxblood**, fondo un pelo più chiaro:
+  fondo `#ececea`, superficie `#dfdfdc`, testo `#0e0e0f`, secondario `#47484c`, accento `#7d0c14`
+  (scuro: fondo `#141517`, accento `#ff6a4d`). Il selettore delle palette è stato tolto.
+- **Pubblicazioni selezionate** in home: tre, una per filone (JBC 2026 binding, JCP 2026 meccanica statistica,
+  CPC 2025 NextGenPB), più il link all'elenco completo. Nella fase 3 il link andrà alla pagina `/publications/`.
+- **Motivo di sfondo "biotech"**, richiesto da Vincenzo: lo scheletro Cα reale del complesso barnase–barstar
+  (PDB 1BRS, dati CC0), proiettato sui due assi principali e reso come linea sottile a basso contrasto
+  (`--line`), dietro il primo schermo e nel riquadro dei contatti. È la stessa coppia di proteine della figura
+  della Ricerca. File: `alternative/img/backbone-1brs.svg`, generato da `tools/backbone.py` (`python3 -I tools/backbone.py 1BRS.pdb A,D out.svg`, con il PDB scaricato da RCSB).
+  **Eccezione dichiarata** alle regole della skill (niente motivi decorativi): voluta dal committente e fatta
+  con dati veri del soggetto, non con forme astratte.
+- **CV allineati al sito**: stessi caratteri e colori (vedi `cv/README.md`).
+- Le entrate animate nascondono il contenuto solo dopo che lo script è partito (classe `anim`): se lo script
+  fallisce, la pagina resta leggibile.
+- Misure: `inspect.mjs --allow few-pictures` 0 FAIL, 1 WARN (nessun video); impeccable sul rendering: nessuna segnalazione.
+
 ## Decisioni ancora aperte
 
-- [ ] Palette: rosso, blu o oxblood.
-- [ ] D confermata come direzione?
-- [ ] `CV_industry.pdf` è ancora di aprile 2026 e nel prototipo non è linkato: aggiornarlo o toglierlo.
+- [ ] Email gmail personale nei CV pubblici: tenerla o lasciare solo quella del Politecnico.
+- [ ] Zodiak: licenza Fontshare da verificare prima di ospitare i file del font nel sito (fase 3).
 - [ ] Citazione di Winston Wolf: tenerla (in carattere normale) o toglierla.
 - [ ] Lingua: solo inglese o anche italiano.
 - [ ] Font self-hosted nel sito finale (sì, salvo licenze: Zodiak ha licenza Fontshare, da verificare per il self-hosting).
