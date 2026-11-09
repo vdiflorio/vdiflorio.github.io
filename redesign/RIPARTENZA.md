@@ -60,6 +60,7 @@ laboratorio MOX del Dipartimento di Matematica del Politecnico di Milano. Rispon
 ## Regole (le stesse della sessione precedente)
 
 - **Mai un push senza avermelo fatto vedere in locale e senza un mio ok esplicito.** Commit locali sì, sul branch `redesign`.
+- **Niente Claude come coautore**: nessuna riga `Co-Authored-By: Claude` nei commit, niente "Generated with Claude Code" nelle PR.
 - **Per gradi**: un passo alla volta, ognuno con la sua verifica; a fine passo mi dici cosa hai fatto e cosa serve da me.
 - Prima di cancellare o sovrascrivere qualcosa, guardalo e dimmelo.
 - Stile: segui la skill **design-taste-frontend** e le sue regole fisse (titoli al massimo su due righe, niente etichette sopra i
