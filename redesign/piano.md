@@ -90,8 +90,11 @@ Lo script [tools/verifica-online.sh](tools/verifica-online.sh) controlla in sola
 
 - [ ] Figure definitive, ottimizzate (WebP, `srcset`, dimensioni esplicite).
 - [ ] Nuove figure se servono (es. PINN, meccanica statistica fuori equilibrio, che oggi non ne hanno).
-- [ ] Una figura animata con la skill **anatomy** (disegno isometrico esplicativo), candidata:
-      la pipeline di NextGenPB — molecola → superficie → octree raffinato localmente → potenziale.
+- [x] Una figura animata con la skill **anatomy** (2026-11-09): la pipeline di NextGenPB su barnase–barstar,
+      atomi → superficie molecolare → octree → potenziale, nella riga NextGenPB di Projects. Molecola in 3D sopra
+      il piano, mesh in 2D sul piano; dati veri da un run di NextGenPB. Dettagli e misure in design.md → "Fase 4".
+      File: `docs/assets/js/ngpb.js`, `docs/assets/js/ngpb-data.js` (generato da `redesign/tools/fase4_3d.py`),
+      stile in fondo a `site.css`. Prototipo isolato in `redesign/fase4/` (la variante 2D scartata è stata cancellata).
 - [ ] L'elemento interattivo della direzione scelta (vedi design.md).
 - [ ] Anteprima locale → ok.
 

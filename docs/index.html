@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400&amp;display=swap">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/ngpb-data.js" defer></script>
+<script src="/assets/js/ngpb.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vincenzo Di Florio", "url": "https://vdiflorio.github.io/", "image": "https://vdiflorio.github.io/assets/img/og.jpg", "email": "mailto:vincenzo.diflorio@polimi.it", "jobTitle": "Post-doctoral Research Fellow", "affiliation": {"@type": "Organization", "name": "MOX – Modeling and Scientific Computing, Department of Mathematics, Politecnico di Milano"}, "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Politecnico di Torino"}, {"@type": "CollegeOrUniversity", "name": "Università degli Studi di Torino"}, {"@type": "CollegeOrUniversity", "name": "Università degli Studi di Trieste"}], "knowsAbout": ["Biomolecular electrostatics", "Poisson–Boltzmann equation", "Protein–protein binding", "Finite element methods", "Scientific computing", "Non-equilibrium statistical mechanics"], "sameAs": ["https://orcid.org/0000-0002-9839-1518", "https://scholar.google.com/citations?user=t_W18NgAAAAJ", "https://github.com/vdiflorio", "https://www.linkedin.com/in/vincenzo-di-florio-269b87401"]}</script>
 </head>
 <body>
@@ -102,7 +104,24 @@
       <ul class="projects">
         <li class="rise">
           <h3>NextGenPB</h3>
-          <div><p>Solver for biomolecular electrostatics based on the Poisson–Boltzmann equation, with analytical refinement and high-resolution accuracy. Integrated in the MCCE workflow for pK<sub>a</sub> calculations. <span class="links"><a href="https://github.com/vdiflorio/NextGenPB">Code</a><a href="https://vdiflorio.github.io/nextgenpb_tutorial/">Tutorial</a><a href="https://doi.org/10.1016/j.cpc.2025.109816">Paper</a></span></p></div>
+          <div><p>Solver for biomolecular electrostatics based on the Poisson–Boltzmann equation, with analytical refinement and high-resolution accuracy. Integrated in the MCCE workflow for pK<sub>a</sub> calculations. <span class="links"><a href="https://github.com/vdiflorio/NextGenPB">Code</a><a href="https://vdiflorio.github.io/nextgenpb_tutorial/">Tutorial</a><a href="https://doi.org/10.1016/j.cpc.2025.109816">Paper</a></span></p>
+            <figure class="ngpb" data-desc="Barnase and barstar standing on the plane of the mesh: their atoms as balls and sticks, then the molecular surface around them, an octree mesh that is fine around the two proteins and coarser towards the edge of the domain, and the surface coloured by the electrostatic potential, red negative and blue positive.">
+              <p class="ngpb__title">From atoms to electrostatic potential</p>
+              <div class="ngpb__art"></div>
+              <div class="ngpb__bar">
+                <button class="ngpb__play" type="button" aria-pressed="false">Pause</button>
+                <ol class="ngpb__steps" aria-label="Steps">
+                  <li><button type="button" data-go="1">Atoms</button></li>
+                  <li><button type="button" data-go="2">Surface</button></li>
+                  <li><button type="button" data-go="3">Mesh</button></li>
+                  <li><button type="button" data-go="4">Potential</button></li>
+                </ol>
+                <span class="ngpb__key">−5 <i aria-hidden="true"><b class="n2"></b><b class="n1"></b><b class="p1"></b><b class="p2"></b></i> +5 kT/e</span>
+              </div>
+              <div class="ngpb__say"><p>The atoms of barnase and barstar above the plane, with their bonds.</p><p>The molecular surface around them, the boundary between the low-dielectric protein and the water.</p><p>An octree mesh: uniform and fine around the molecules, so every cell the surface cuts is at the finest level, then coarser level after level towards the boundary.</p><p>The potential on the molecular surface, from the nonlinear Poisson–Boltzmann equation at 0.145 M: red negative, blue positive.</p></div>
+              <figcaption>Barnase and barstar (PDB 1BRS), barstar moved 10 Å from the crystal pose, cut by the plane of the mesh. Surface and potential computed with NextGenPB; the surface is simplified for the drawing, and mesh cells are drawn about seven times larger than the real 0.5 Å.</figcaption>
+            </figure>
+          </div>
         </li>
         <li class="rise">
           <h3>Analytical Electrostatics</h3>

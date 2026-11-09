@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NextGenPB figure · 3D prototype</title>
+<meta name="robots" content="noindex">
+<script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400&amp;display=swap">
+<link rel="stylesheet" href="/docs/assets/css/site.css">
+<link rel="stylesheet" href="ngpb3d.css">
+<script src="/docs/assets/js/site.js" defer></script>
+<script src="ngpb-data.js" defer></script>
+<script src="ngpb3d.js" defer></script>
+</head>
+<body>
+<div class="page">
+  <nav class="nav" aria-label="Main">
+    <a class="nav__name" href="/redesign/fase4/">Vincenzo Di Florio</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+    <button class="theme" type="button" aria-pressed="false">Dark</button>
+  </nav>
+
+  <main id="main">
+    <section class="section section--tight" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <ul class="projects">
+        <li>
+          <h3>NextGenPB</h3>
+          <div>
+            <p>Solver for biomolecular electrostatics based on the Poisson–Boltzmann equation, with analytical refinement and high-resolution accuracy. Integrated in the MCCE workflow for pK<sub>a</sub> calculations. <span class="links"><a href="https://github.com/vdiflorio/NextGenPB">Code</a><a href="https://vdiflorio.github.io/nextgenpb_tutorial/">Tutorial</a><a href="https://doi.org/10.1016/j.cpc.2025.109816">Paper</a></span></p>
+
+            <figure class="ngpb" data-desc="Barnase and barstar standing on the plane of the mesh: their atoms as balls and sticks, then the molecular surface around them, an octree mesh that is fine around the two proteins and coarser towards the edge of the domain, and the surface coloured by the electrostatic potential, red negative and blue positive.">
+              <p class="ngpb__title">From atoms to electrostatic potential</p>
+              <div class="ngpb__art"></div>
+              <div class="ngpb__bar">
+                <button class="ngpb__play" type="button" aria-pressed="false">Pause</button>
+                <ol class="ngpb__steps" aria-label="Steps">
+                  <li><button type="button" data-go="1">Atoms</button></li>
+                  <li><button type="button" data-go="2">Surface</button></li>
+                  <li><button type="button" data-go="3">Mesh</button></li>
+                  <li><button type="button" data-go="4">Potential</button></li>
+                </ol>
+                <span class="ngpb__key">−5 <i aria-hidden="true"><b style="background: var(--neg)"></b><b style="background: color-mix(in srgb, var(--neg) 50%, var(--plate))"></b><b style="background: color-mix(in srgb, var(--pos) 50%, var(--plate))"></b><b style="background: var(--pos)"></b></i> +5 kT/e</span>
+              </div>
+              <div class="ngpb__say"><p>The atoms of barnase and barstar above the plane, with their bonds.</p><p>The molecular surface around them, the boundary between the low-dielectric protein and the water.</p><p>An octree mesh: uniform and fine around the molecules, so every cell the surface cuts is at the finest level, then coarser level after level towards the boundary.</p><p>The potential on the molecular surface, from the nonlinear Poisson–Boltzmann equation at 0.145 M: red negative, blue positive.</p></div>
+              <figcaption>Barnase and barstar (PDB 1BRS), barstar moved 10 Å from the crystal pose, cut by the plane of the mesh. Surface and potential computed with NextGenPB; the surface is simplified for the drawing, and mesh cells are drawn about seven times larger than the real 0.5 Å.</figcaption>
+            </figure>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>
+<footer class="page footer"><span>Prototype, phase 4: not part of the site.</span></footer>
+</body>
+</html>

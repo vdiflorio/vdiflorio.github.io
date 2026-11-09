@@ -47,6 +47,15 @@
         ],
         "createdAt": "2026-11-08T12:38:56.763Z",
         "reason": "Claude: static scan misses the inner .page wrapper (width: min(1200px, 100% - 2*margin), centred) and the section's 64-120px block padding. Rendered scans at 1280 and 390 report nothing."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "docs/index.html"
+        ],
+        "createdAt": "2026-11-09T21:22:06.758Z",
+        "reason": "Claude: static scan flags <section class=contact> (unchanged since phase 3) as flush against its background; it has padding-block clamp(64px,8vw,120px) and the .page inset. Rendered scans at 1280x800 and 390x844 (impeccable detect --no-config) report no cramped-padding."
       }
     ]
   }

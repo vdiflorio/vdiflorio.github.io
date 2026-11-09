@@ -1,6 +1,6 @@
 # Decisioni di design — vdiflorio.github.io
 
-Ultimo aggiornamento: 2026-11-08 · metodo: skill *design-taste-frontend* (tasteskill v2)
+Ultimo aggiornamento: 2026-11-09 · metodo: skill *design-taste-frontend* (tasteskill v2)
 
 Questo file registra ogni decisione di stile e il suo perché. Le fasi del lavoro sono in [piano.md](piano.md).
 
@@ -216,6 +216,42 @@ Script di controllo su Chrome headless (helper CDP della skill), pagine home, Pu
 | SEO | Titolo, description, canonical, Open Graph con URL assoluto su ogni pagina; la 404 è `noindex` e senza canonical; i reindirizzamenti sono `noindex` con canonical alla home. |
 | Link | Interni tutti 200. Esterni: GitHub, ORCID, Scholar, MOX, tutorial NextGenPB 200; DOI risolti verso gli articoli giusti (ACS, AIP, MDPI rispondono 403 ai robot, LinkedIn 999). |
 
+## Fase 4 — figura animata di NextGenPB (2026-11-09)
+
+**Decisione:** una figura isometrica animata (skill *anatomy*, adattata alle regole del sito) nella riga NextGenPB della
+sezione Projects; la figura di Barnase–Barstar resta in Research.
+
+- **Cosa racconta**, in quattro passi con un pulsante ciascuno: *Atoms* (gli atomi pesanti di barnase–barstar sopra il
+  piano, sfere e bastoncini), *Surface* (la superficie molecolare che li avvolge), *Mesh* (l'octree sul piano: uniforme e
+  fine attorno alle molecole, poi celle che raddoppiano verso il bordo, bilanciamento 2:1, come nella slide della
+  presentazione MUL), *Potential* (φ sulla superficie, rosso negativo e blu positivo, scala −5…+5 kT/e come nelle figure
+  delle presentazioni).
+- **Perché così:** l'oggetto è il calcolo stesso visto in sezione: la lastra è il piano di taglio con la mesh in 2D,
+  sopra c'è la molecola in 3D. Una prima variante tutta 2D (sezione degli atomi, superficie estrusa) è stata scartata da
+  Vincenzo a favore del 3D, con tutti gli atomi pesanti (non uno per residuo).
+- **Dati veri:** run `presentazione-wade/data/results_forces/B/runs/NLPB_0.145_surf/D10` (NLPB, 0,145 M, barstar a
+  10 Å dalla posa del cristallo, la stessa della figura in Research): PQR e `triangulatedSurf_phi.vtp`.
+  `redesign/tools/fase4_3d.py` sceglie il piano (passa per i centri delle due catene), semplifica la superficie di
+  NanoShaper (110 k triangoli → raggruppamento dei vertici su celle di 2,5 Å, φ mediato), tiene solo la metà sopra il
+  piano, scarta le facce che la camera non vede e scrive tutto in binario base64. La camera è nei dati: pagina e script
+  non possono andare fuori sincrono.
+- **Schematico, e detto in didascalia:** celle della mesh disegnate da 3,75 Å (circa 7 volte gli 0,5 Å veri) e dominio
+  più stretto del vero (circa 1,7 volte la molecola invece di 5); superficie semplificata.
+- **Stile:** solo token di `site.css` mescolati con `color-mix` più `--neg`/`--pos` (`#c8102e`/`#1e56a0` come in
+  `style.py` della presentazione; nel tema scuro `#ff5c6c`/`#6b9cff`). Facce piatte in sei toni, niente gradienti, ombre
+  o cornici; titolo in Zodiak 400, testi in Hanken; nessun "Fig 1". Uno strato sotto le facce chiude le piccole fessure
+  della semplificazione e fa da contorno.
+- **Movimento:** solo opacità (nessuna altra proprietà animata); ciclo di circa 18 s con Pause/Play; si ferma
+  fuori dallo schermo o a scheda nascosta e riprende dal tempo che restava; un clic su un passo ferma l'animazione lì.
+  Con `prefers-reduced-motion: reduce` la figura è ferma e completa (tutte e quattro le fasi), senza pulsante di pausa.
+- **Accessibilità:** `<figure>` con `figcaption`, SVG `role="img"` con descrizione; pulsanti dei passi con
+  `aria-current="step"` e anello di focus del sito. Senza JavaScript la figura non compare (niente blocco vuoto).
+- **Misure (2026-11-09):** figura 52 KB (dati 32, script 13, CSS ~7; circa 26 KB compressi); home 181 KB misurati nel
+  browser + ~22 KB di Zodiak ≈ 203 KB (< 300). `inspect.mjs --allow few-pictures` 0 FAIL a 1440 / 768 / 390, unico
+  WARN "nessun video"; `lint.mjs docs` 0 FAIL 0 WARN; `verifica-online.sh` sull'anteprima 40 ok, 0 errori; console
+  pulita; temi chiaro e scuro e movimento ridotto controllati sulle catture.
+- **Limite noto:** sul telefono gli atomi del primo passo sono una trama fitta (sfere di circa 1 px); dura solo il primo passo.
+
 ## Decisioni ancora aperte
 
 - [x] Zodiak: licenza letta il 2026-11-09 (ITF Free Font License 2.0, 17 ago 2026). Sì al self-hosting per il proprio sito;
@@ -230,3 +266,4 @@ Script di controllo su Chrome headless (helper CDP della skill), pagine home, Pu
 
 - 2026-11-08 — Prima stesura: audit, regole, immagini, tre direzioni.
 - 2026-11-09 — Pubblicazioni selezionate cambiate; pagina CV completa; correzione dei margini su tablet; chiuse le decisioni sulla citazione e sulla lingua.
+- 2026-11-09 — Fase 4: figura animata di NextGenPB (decisione, dati, misure).
