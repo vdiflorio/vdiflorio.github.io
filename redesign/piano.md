@@ -66,7 +66,7 @@ pubblicherà. Docker serve solo per riaprire la vecchia versione Jekyll.
 - [x] SEO: `<title>` e description per pagina, canonical, Open Graph con `og.jpg` 1200×630 e URL assoluto,
       schema.org `Person` con ORCID/Scholar/GitHub/LinkedIn, `sitemap.xml`, `robots.txt`,
       verifica Google (file + meta tag), favicon SVG.
-- [x] Pubblicazioni a mano (6 lavori); in home le tre selezionate (dal 2026-11-09: JCP 2026 trasporto fuori equilibrio, CPC 2025 NextGenPB, EPJ Plus 2024 equazione di stato microscopica).
+- [x] Pubblicazioni a mano (6 lavori); in home le tre selezionate (dal 2026-11-09, in quest'ordine voluto da Vincenzo: CPC 2025 NextGenPB, JCP 2026 trasporto fuori equilibrio, EPJ Plus 2024 equazione di stato microscopica).
 - [x] Controlli: inspect.mjs 0 FAIL su home, publications, CV (la 404 ha solo "poco movimento", voluto);
       lint.mjs pulito; impeccable sul rendering pulito; link interni tutti 200; link esterni verificati.
 - [x] CV completo (novembre 2026) in `/assets/pdf/CV.pdf`, stesso indirizzo di prima.
@@ -97,7 +97,7 @@ Fatta il 2026-11-09; dettagli in design.md → "Verifiche finali".
 - [x] SEO: titoli, description, canonical, Open Graph, `sitemap.xml`, `robots.txt`, verifica Google; tolto il canonical dalla 404.
 - [x] Link interni tutti 200; link esterni verificati (i 403 di ACS, AIP, MDPI e il 999 di LinkedIn sono blocchi
       anti-robot: i DOI arrivano agli articoli giusti).
-- [ ] Zodiak: licenza letta (ITF FFL 2.0); decidere se restare sul CDN o ospitarlo (vedi design.md).
+- [x] Zodiak: licenza letta (ITF FFL 2.0); resta sul CDN di Fontshare, l'uso esplicitamente previsto (vedi design.md).
 
 ### Fase 6 — Pubblicazione
 

@@ -190,9 +190,10 @@ Le card dei progetti sono diventate righe (la skill vieta file di card identiche
 
 ## Primo giro sull'anteprima (2026-11-09)
 
-- **Pubblicazioni selezionate in home**, scelte da Vincenzo: *Computing nonequilibrium transport from short-time transients*
-  (JCP 2026), *NextGenPB* (CPC 2025), *Microscopic state equation for oscillator chains* (EPJ Plus 2024). L'articolo JBC
-  esce dalla home e resta in Publications e nel CV.
+- **Pubblicazioni selezionate in home**, scelte da Vincenzo e in quest'ordine (non cronologico, voluto):
+  *NextGenPB* (CPC 2025), *Computing nonequilibrium transport from short-time transients* (JCP 2026),
+  *Microscopic state equation for oscillator chains* (EPJ Plus 2024). L'articolo JBC esce dalla home e resta in
+  Publications e nel CV.
 - **Pagina CV completa**: le stesse sezioni del PDF accademico (interessi di ricerca, formazione, esperienza,
   articoli, talk, poster, didattica, scuole, grant, competenze), con i componenti già usati nelle altre pagine.
   L'autorizzazione al trattamento dei dati resta solo nel PDF.
@@ -217,9 +218,10 @@ Script di controllo su Chrome headless (helper CDP della skill), pagine home, Pu
 
 ## Decisioni ancora aperte
 
-- [ ] Zodiak: licenza letta il 2026-11-09 (ITF Free Font License 2.0, 17 ago 2026). Sì al self-hosting per il proprio sito;
+- [x] Zodiak: licenza letta il 2026-11-09 (ITF Free Font License 2.0, 17 ago 2026). Sì al self-hosting per il proprio sito;
       no alla distribuzione tramite "repository" o "publicly accessible servers"; no a subsetting e conversioni.
-      Un repository GitHub pubblico è una zona grigia: per ora resta il CDN di Fontshare.
+      Copiare il file nel repository GitHub pubblico lo renderebbe scaricabile da chiunque: **decisione: resta il CDN di
+      Fontshare** (uso previsto espressamente dalla licenza, nessun file del font nel repository).
 - [x] Citazione di Winston Wolf: tenuta, in carattere normale, come didascalia della foto.
 - [x] Lingua: solo inglese.
 - [x] Hanken Grotesk ospitato nel sito (OFL); Zodiak vedi sopra.
