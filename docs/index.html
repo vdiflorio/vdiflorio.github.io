@@ -72,15 +72,15 @@
     <section class="section two" aria-labelledby="about-title">
       <div class="about__text">
         <h2 id="about-title" class="rise">About</h2>
-        <p class="rise">I’m a physicist turned computational scientist, driven by a simple ambition: turning the language of physics into algorithms that actually work on real, messy problems.</p>
-        <p class="rise">I hold a <strong>Ph.D. in Pure and Applied Mathematics</strong> from Politecnico di Torino and the Istituto Italiano di Tecnologia. Today I work on <strong>protein–protein interactions and binding affinity</strong> through continuum electrostatics, and on the numerical solvers that make those calculations fast and accurate, starting from <a href="https://vdiflorio.github.io/nextgenpb_tutorial/">NextGenPB</a>, the Poisson–Boltzmann solver I developed from the ground up.</p>
-        <p class="rise">I also work on <strong>non-equilibrium statistical mechanics</strong>. If you are interested in collaborations in computational physics, biomolecular modelling or high-performance scientific software, feel free to reach out.</p>
+        <p>I’m a mathematical physicist who works on both theory and its practical applications, from non-equilibrium statistical mechanics to numerical solvers for real proteins.</p>
+        <p>I hold a <strong>Ph.D. in Pure and Applied Mathematics</strong> from Politecnico di Torino and the Istituto Italiano di Tecnologia. Today I work on <strong>protein–protein interactions and binding affinity</strong> through continuum electrostatics, and on the numerical solvers that make those calculations fast and accurate, starting from <a href="https://vdiflorio.github.io/nextgenpb_tutorial/">NextGenPB</a>, the Poisson–Boltzmann solver I developed with my co-authors.</p>
+        <p>I also work on <strong>non-equilibrium statistical mechanics</strong>. If you are interested in collaborations in computational physics, biomolecular modelling or high-performance scientific software, write to me.</p>
       </div>
-      <dl class="facts rise">
+      <dl class="facts">
         <div><dt>Now</dt><dd>Post-doctoral research fellow, MOX laboratory, Department of Mathematics, Politecnico di Milano (2025–)</dd></div>
         <div><dt>Ph.D.</dt><dd>Pure and Applied Mathematics, Politecnico di Torino and IIT (2021–2025)</dd></div>
-        <div><dt>Visiting</dt><dd>City College of New York, 2024 · SISSA, Trieste, 2018</dd></div>
-        <div><dt>Grant</dt><dd>PRACE-FENIX 2025, Principal Investigator: cloud computing resources, 2026–2027</dd></div>
+        <div><dt>Internships</dt><dd>City College of New York, 2024 · SISSA, Trieste, 2018</dd></div>
+        <div><dt>Grant</dt><dd>Principal Investigator of a PRACE-FENIX 2025 cloud computing grant, 2026–2027</dd></div>
       </dl>
     </section>
 
@@ -92,9 +92,9 @@
           <figcaption>Barnase and barstar, coloured by electrostatic potential (red negative, blue positive), with the electrostatic force on each protein.</figcaption>
         </figure>
         <ul class="topics">
-          <li class="rise"><h3>Protein–protein binding</h3><p>How proteins recognise and bind each other, studied through continuum electrostatics: electrostatic complementarity at biomolecular interfaces, interaction forces and binding affinity.</p></li>
-          <li class="rise"><h3>Poisson–Boltzmann solvers</h3><p>Efficient numerical methods for the Poisson–Boltzmann equation. NextGenPB uses finite elements, analytical super-resolution and a mesh refined only where the molecular surface is. Complementary work explores data-driven surrogates that speed these calculations up.</p></li>
-          <li class="rise"><h3>Non-equilibrium statistical mechanics</h3><p>The behaviour of low-dimensional systems far from equilibrium, from heat conduction in one-dimensional chains to the Boltzmann equation.</p></li>
+          <li><h3>Protein–protein binding</h3><p>How proteins recognise and bind each other, studied through continuum electrostatics: electrostatic complementarity at biomolecular interfaces, interaction forces and binding affinity.</p></li>
+          <li><h3>Poisson–Boltzmann solvers</h3><p>Efficient numerical methods for the Poisson–Boltzmann equation. NextGenPB uses finite elements, analytical super-resolution and a mesh refined only where the molecular surface is. I also work on data-driven surrogates that speed these calculations up.</p></li>
+          <li><h3>Non-equilibrium statistical mechanics</h3><p>The behaviour of low-dimensional systems far from equilibrium, from heat conduction in one-dimensional chains to the Boltzmann equation.</p></li>
         </ul>
       </div>
     </section>
@@ -102,9 +102,9 @@
     <section class="section" id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title" class="rise">Projects</h2>
       <ul class="projects">
-        <li class="rise">
+        <li>
           <h3>NextGenPB</h3>
-          <div><p>Solver for biomolecular electrostatics based on the Poisson–Boltzmann equation, with analytical refinement and high-resolution accuracy. Integrated in the MCCE workflow for pK<sub>a</sub> calculations. <span class="links"><a href="https://github.com/vdiflorio/NextGenPB">Code</a><a href="https://vdiflorio.github.io/nextgenpb_tutorial/">Tutorial</a><a href="https://doi.org/10.1016/j.cpc.2025.109816">Paper</a></span></p>
+          <div><p>Solver for biomolecular electrostatics based on the Poisson–Boltzmann equation, with analytical super-resolution and local mesh refinement. Integrated in the MCCE workflow for pK<sub>a</sub> calculations. <span class="links"><a href="https://github.com/vdiflorio/NextGenPB">Code</a><a href="https://vdiflorio.github.io/nextgenpb_tutorial/">Tutorial</a><a href="https://doi.org/10.1016/j.cpc.2025.109816">Paper</a></span></p>
             <figure class="ngpb" data-desc="Barnase and barstar standing on the plane of the mesh: their atoms as balls and sticks, then the molecular surface around them, an octree mesh that is fine around the two proteins and coarser towards the edge of the domain, and the surface coloured by the electrostatic potential, red negative and blue positive.">
               <p class="ngpb__title">From atoms to electrostatic potential</p>
               <div class="ngpb__art"></div>
@@ -116,18 +116,18 @@
                   <li><button type="button" data-go="3">Mesh</button></li>
                   <li><button type="button" data-go="4">Potential</button></li>
                 </ol>
-                <span class="ngpb__key">−5 <i aria-hidden="true"><b class="n2"></b><b class="n1"></b><b class="p1"></b><b class="p2"></b></i> +5 kT/e</span>
+                <span class="ngpb__key">−5 <i aria-hidden="true"><b class="n2"></b><b class="n1"></b><b class="p1"></b><b class="p2"></b></i> +5&nbsp;kT/e</span>
               </div>
-              <div class="ngpb__say"><p>The atoms of barnase and barstar above the plane, with their bonds.</p><p>The molecular surface around them, the boundary between the low-dielectric protein and the water.</p><p>An octree mesh: uniform and fine around the molecules, so every cell the surface cuts is at the finest level, then coarser level after level towards the boundary.</p><p>The potential on the molecular surface, from the nonlinear Poisson–Boltzmann equation at 0.145 M: red negative, blue positive.</p></div>
-              <figcaption>Barnase and barstar (PDB 1BRS), barstar moved 10 Å from the crystal pose, cut by the plane of the mesh. Surface and potential computed with NextGenPB; the surface is simplified for the drawing, and mesh cells are drawn about seven times larger than the real 0.5 Å.</figcaption>
+              <div class="ngpb__say"><p>The atoms of barnase and barstar above the plane, with their bonds.</p><p>The molecular surface around them, the boundary between the low-dielectric protein and the water.</p><p>An octree mesh: uniform and fine around the molecules, so every cell the surface cuts is at the finest level, then coarser level after level towards the boundary.</p><p>The potential on the molecular surface, from the nonlinear Poisson–Boltzmann equation at 0.145&nbsp;M: red negative, blue positive.</p></div>
+              <figcaption>Barnase and barstar (PDB&nbsp;1BRS), barstar moved 10&nbsp;Å from the crystal pose, cut by the plane of the mesh. Surface and potential computed with NextGenPB; the surface is simplified for the drawing, and mesh cells are drawn about seven times larger than the real 0.5&nbsp;Å.</figcaption>
             </figure>
           </div>
         </li>
-        <li class="rise">
-          <h3>Analytical Electrostatics</h3>
+        <li>
+          <h3>Analytical electrostatics</h3>
           <div><p>Analytical tools for the electrostatic modelling of macromolecules and proteins in electrolytic environments. <span class="links"><a href="https://github.com/vdiflorio/Analytical_Electrostatics">Code</a></span></p></div>
         </li>
-        <li class="rise">
+        <li>
           <h3>1D chains</h3>
           <div><p>Numerical simulation of one-dimensional chain models for non-equilibrium dynamics and statistical mechanics. <span class="links"><a href="https://github.com/vdiflorio/1Dchain">Code</a><a href="https://doi.org/10.1063/5.0320325">Paper</a></span></p></div>
         </li>
@@ -140,9 +140,9 @@
         <a href="/publications/">All publications and talks</a>
       </div>
       <ol>
-        <li class="rise"><span class="year">2025</span><div><a class="title" href="https://doi.org/10.1016/j.cpc.2025.109816">NextGenPB: an analytically-enabled super resolution tool for solving the Poisson–Boltzmann equation featuring local (de)refinement</a><p class="meta"><b>Di Florio</b>, Ansalone, Siryk, Decherchi, De Falco, Rocchia · <em>Computer Physics Communications</em></p></div></li>
-        <li class="rise"><span class="year">2026</span><div><a class="title" href="https://doi.org/10.1063/5.0320325">Computing nonequilibrium transport from short-time transients: from Lorentz gas to heat conduction in one-dimensional chains</a><p class="meta">Carbone, <b>Di Florio</b>, Lepri, Rondoni · <em>The Journal of Chemical Physics</em></p></div></li>
-        <li class="rise"><span class="year">2024</span><div><a class="title" href="https://doi.org/10.1140/epjp/s13360-024-05419-1">Microscopic state equation for oscillator chains</a><p class="meta"><b>Di Florio</b>, Giberti, Rondoni, Zhao · <em>The European Physical Journal Plus</em></p></div></li>
+        <li><span class="year">2025</span><div><a class="title" href="https://doi.org/10.1016/j.cpc.2025.109816">NextGenPB: an analytically-enabled super resolution tool for solving the Poisson–Boltzmann equation featuring local (de)refinement</a><p class="meta"><b>Di Florio</b>, Ansalone, Siryk, Decherchi, De Falco, Rocchia · <em>Computer Physics Communications</em></p></div></li>
+        <li><span class="year">2026</span><div><a class="title" href="https://doi.org/10.1063/5.0320325">Computing nonequilibrium transport from short-time transients: from Lorentz gas to heat conduction in one-dimensional chains</a><p class="meta">Carbone, <b>Di Florio</b>, Lepri, Rondoni · <em>The Journal of Chemical Physics</em></p></div></li>
+        <li><span class="year">2024</span><div><a class="title" href="https://doi.org/10.1140/epjp/s13360-024-05419-1">Microscopic state equation for oscillator chains</a><p class="meta"><b>Di Florio</b>, Giberti, Rondoni, Zhao · <em>The European Physical Journal Plus</em></p></div></li>
       </ol>
     </section>
 
@@ -151,14 +151,14 @@
         <div>
           <h2 id="teaching-title" class="rise">Teaching</h2>
           <ul class="courses">
-            <li class="rise"><div><b>Advanced Methods for Scientific Computing</b><br><span>Teaching assistant · Department of Mathematics, Politecnico di Milano</span></div><time>2026–</time></li>
-            <li class="rise"><div><b>Mathematical Physics</b><br><span>Tutor · School of Industrial and Information Engineering, Politecnico di Milano</span></div><time>2026–</time></li>
-            <li class="rise"><div><b>Methods for Environmental Engineering</b><br><span>Tutor · Politecnico di Torino</span></div><time>2024</time></li>
-            <li class="rise"><div><b>Calculus 1</b><br><span>Teaching assistant · Politecnico di Torino</span></div><time>2022–23</time></li>
-            <li class="rise"><div><b>Physics 1</b><br><span>Teaching assistant · Università di Torino</span></div><time>2021</time></li>
+            <li><div><b>Advanced Methods for Scientific Computing</b><br><span>Teaching assistant · Department of Mathematics, Politecnico di Milano</span></div><time>2026–</time></li>
+            <li><div><b>Mathematical Physics</b><br><span>Tutor · School of Industrial and Information Engineering, Politecnico di Milano</span></div><time>2026–</time></li>
+            <li><div><b>Methods for Environmental Engineering</b><br><span>Tutor · Politecnico di Torino</span></div><time>2024</time></li>
+            <li><div><b>Calculus 1</b><br><span>Teaching assistant · Politecnico di Torino</span></div><time>2022–23</time></li>
+            <li><div><b>Physics 1</b><br><span>Teaching assistant · Università di Torino</span></div><time>2021</time></li>
           </ul>
         </div>
-        <dl class="facts rise">
+        <dl class="facts">
           <div><dt>Recent talks</dt><dd>SIAM PP26, Berlin, 2026 · GIMC SIMAI Young, Pisa, 2026 · ICIAM, Tokyo, 2023</dd></div>
           <div><dt>Recent posters</dt><dd>EuroQSAR, Perugia, 2026 · Protein Electrostatics, Lisbon, 2025 · ACS Fall, Denver, 2024</dd></div>
           <div><dt>Everything else</dt><dd><a href="/cv/">Curriculum vitae</a> · <a href="/assets/pdf/CV_industry.pdf">CV for industry (PDF)</a></dd></div>
@@ -194,7 +194,7 @@
 
 <footer class="page footer">
   <span>© 2026 Vincenzo Di Florio</span>
-  <span>Figure: own work, computed with NextGenPB · Background: barnase–barstar backbone, PDB 1BRS</span>
+  <span>Figure: own work, computed with NextGenPB · Background: barnase–barstar backbone, PDB&nbsp;1BRS</span>
 </footer>
 </body>
 </html>

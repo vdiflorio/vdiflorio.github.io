@@ -112,6 +112,8 @@ Fatta il 2026-11-09; dettagli in design.md → "Verifiche finali".
 - [x] Link interni tutti 200; link esterni verificati (i 403 di ACS, AIP, MDPI e il 999 di LinkedIn sono blocchi
       anti-robot: i DOI arrivano agli articoli giusti).
 - [x] Zodiak: licenza letta (ITF FFL 2.0); resta sul CDN di Fontshare, l'uso esplicitamente previsto (vedi design.md).
+- [x] Controllo finale con impeccable (2026-11-25): caratteri, tic da IA nei testi e nel design, CV; correzioni e testi
+      approvati applicati (vedi design.md → "Controllo finale"). Publications e CV senza entrate: `--allow still-page`.
 
 ### Fase 6 — Pubblicazione
 

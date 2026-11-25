@@ -40,7 +40,8 @@ continuare. Se qualcosa non torna con quello che è scritto qui, fermati e chied
 3. Avvia l'anteprima (`python3 -m http.server 8001 --bind 127.0.0.1 -d docs`) ed esegui:
    - `bash redesign/tools/verifica-online.sh http://127.0.0.1:8001` → 0 errori;
    - `node --experimental-websocket ~/.claude/skills/design-taste-frontend/scripts/inspect.mjs <url> --allow few-pictures --out <scratchpad>/...`
-     su `/`, `/publications/`, `/cv/` (e `/404.html` con `--allow few-pictures,still-page`) → 0 FAIL.
+     su `/` (con `--allow few-pictures`), `/publications/`, `/cv/` e `/404.html` (con `--allow few-pictures,still-page`:
+     pagine da leggere senza entrate, vedi design.md → "Controllo finale") → 0 FAIL.
 4. **FERMATI.** Dammi l'indirizzo dell'anteprima per l'ultimo sguardo e il riepilogo dei controlli. Se un controllo
    non torna (per esempio `main` non è più `e5a646a`), non proseguire.
 

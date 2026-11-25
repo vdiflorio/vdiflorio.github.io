@@ -252,6 +252,47 @@ sezione Projects; la figura di Barnase–Barstar resta in Research.
   pulita; temi chiaro e scuro e movimento ridotto controllati sulle catture.
 - **Limite noto:** sul telefono gli atomi del primo passo sono una trama fitta (sfere di circa 1 px); dura solo il primo passo.
 
+## Controllo finale con impeccable: caratteri e tic da IA (2026-11-25)
+
+Controllo in un solo passaggio (Chrome headless con l'helper CDP della skill, fontTools sui file dei caratteri,
+`pdftotext` sui PDF), su home, Publications, CV e 404 a 1440 / 768 / 390 px e sui due CV in LaTeX.
+
+**Già a posto, nessuna modifica:** nessun grassetto o corsivo sintetizzato (ogni peso e stile calcolato esiste nei file
+caricati); nessun glifo mancante in Zodiak né nei sottoinsiemi di Hanken (– — ’ “ ” · © à Å −, comprese le stringhe di
+`ngpb.js`); lo scambio Georgia → Zodiak sposta il layout di 0,0006.
+
+**Correzioni tecniche applicate:**
+
+| Problema | Misura prima | Correzione | Dopo |
+| --- | --- | --- | --- |
+| Nei PDF le icone FontAwesome finivano nel testo ("Envelope", "GLOBE", "LINKEDIN-IN"…), letto da copia-incolla e dai sistemi di selezione | `pdftotext` | `\icon{}` in `cv-style.sty`: `accsupp` con ActualText vuoto | testo estratto pulito |
+| Spostamento del layout allo scambio system-ui → Hanken (rete lenta, home desktop: il blocco del titolo cresceva da 474 a 510 px) | CLS 0,091 | `@font-face` "Hanken Fallback": Arial con `size-adjust` 102,2%, `ascent-override` 97,85%, `descent-override` 29,65% (metriche calcolate da `hhea` e larghezze di Hanken) | CLS 0,001 |
+| Parole orfane nei titoli (articolo SCRIB a 1440, "Master’s degree…" a 390) | ultima riga 16–21% | `text-wrap: balance` su h1–h3 e titoli degli articoli, `pretty` su p, li, dd | nessuna orfana |
+| A capo tra numero e unità o titolo e nome | — | `&nbsp;` in 10 Å, 0.5 Å, 0.145 M, +5 kT/e, PDB 1BRS, Dr./Prof. | — |
+| Trattini delle date incoerenti tra home e CV | "2021 – 2025" | trattino unito tra anni ("2021–2025", "2026–present"), spaziato se un lato ha uno spazio ("Jan 2025 – present") | — |
+| Paragrafo italiano dei PDF sillabato all'inglese ("Ammin-istrazione") | — | `babel` (inglese principale) e `otherlanguage{italian}` | "Ammini-strazione" |
+| Ogni blocco entrava con lo stesso fade-up (25 in home, 44 nel CV): tic da modello | — | in home entrano solo i titoli di sezione e la figura di Research; nessuna entrata su Publications e CV | — |
+| "Figure: own work…" nel footer di pagine senza figure | — | su Publications e CV resta solo il credito dello sfondo | — |
+
+**Eccezione dichiarata:** senza entrate, Publications e CV non arrivano agli 8 elementi in movimento che l'inspector
+chiede (`still-page`, FAIL). Sono pagine da leggere: si passano `--allow few-pictures,still-page`, come la 404.
+Il falso positivo "cramped-padding" che `impeccable detect` dà sui sorgenti per il blocco Contact non compare sulle
+pagine renderizzate (0 segnalazioni); nessuna eccezione registrata.
+
+**Testi (approvati da Vincenzo):** About riscritto senza "driven by… real, messy problems" (Vincenzo si definisce
+fisico matematico, tra teoria e applicazioni, non *computational scientist*); NextGenPB "developed with my co-authors"
+(non è solo suo); "write to me" al posto di "feel free to reach out"; "I also work on / develop…" al posto di
+"Complementary work explores"; NextGenPB "with analytical super-resolution and local mesh refinement";
+"Analytical electrostatics"; riquadri "Grant" e "Internships". Il titolo della tesi segue le maiuscole del `.tex`.
+"Email me" resta. Nei CV: tolta la frase "the whole chain" (industria), "from scratch" una volta sola, NextGenPB
+sviluppato "with its co-authors" (first author dell'articolo), PINN *physics-informed*, "Teaching assistant in…",
+tolta la frase ripetuta in Research interests (accademico), "Ph.D." ovunque, sottotitolo industria "Computational
+scientist: numerical methods and scientific software in C++".
+
+**Misure dopo:** `inspect.mjs` 0 FAIL su tutte le pagine (unico WARN "nessun video"); `lint.mjs docs` 0 FAIL 0 WARN;
+`impeccable detect` sulle pagine renderizzate 0 segnalazioni; `verifica-online.sh` sull'anteprima 47 ok, 0 errori;
+PDF ricompilati (accademico 4 pagine, industria 2).
+
 ## Decisioni ancora aperte
 
 - [x] Zodiak: licenza letta il 2026-11-09 (ITF Free Font License 2.0, 17 ago 2026). Sì al self-hosting per il proprio sito;
@@ -267,3 +308,4 @@ sezione Projects; la figura di Barnase–Barstar resta in Research.
 - 2026-11-08 — Prima stesura: audit, regole, immagini, tre direzioni.
 - 2026-11-09 — Pubblicazioni selezionate cambiate; pagina CV completa; correzione dei margini su tablet; chiuse le decisioni sulla citazione e sulla lingua.
 - 2026-11-09 — Fase 4: figura animata di NextGenPB (decisione, dati, misure).
+- 2026-11-25 — Controllo finale con impeccable: caratteri, tic da IA, CV.

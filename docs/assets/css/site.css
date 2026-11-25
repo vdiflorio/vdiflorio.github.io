@@ -11,6 +11,12 @@
   src: url("../fonts/hanken-grotesk-italic-latin.woff2") format("woff2");
   font-weight: 400; font-style: italic; font-display: swap;
 }
+/* Arial reshaped to Hanken's width and line metrics, so the swap does not move the page on a slow connection. */
+@font-face {
+  font-family: "Hanken Fallback";
+  src: local("Arial"), local("ArialMT");
+  size-adjust: 102.2%; ascent-override: 97.85%; descent-override: 29.65%; line-gap-override: 0%;
+}
 
 /* ---------- Tokens ---------- */
 :root {
@@ -24,7 +30,7 @@
   --line-on-surface: #c4c4be;
 
   --display: "Zodiak", Georgia, serif;
-  --text: "Hanken Grotesk", system-ui, sans-serif;
+  --text: "Hanken Grotesk", "Hanken Fallback", system-ui, sans-serif;
 
   --step-small: 0.9375rem;
   --step-body: clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
@@ -61,6 +67,8 @@ body {
   transition: background-color .3s ease, color .3s ease;
 }
 img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, .pubs .title { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
 a { color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

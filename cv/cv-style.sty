@@ -27,6 +27,12 @@
 \RequirePackage{microtype}
 \RequirePackage{ragged2e}
 \RequirePackage{fontawesome5}
+% Icons are decoration: an empty ActualText keeps their names ("Envelope", "GLOBE"...) out of the PDF's text,
+% so copy-paste and the software that reads CVs see only the words.
+\RequirePackage{accsupp}
+\newcommand{\icon}[1]{\BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}}
+% Italian for the data-processing paragraphs: \begin{otherlanguage}{italian} ... \end{otherlanguage}.
+\RequirePackage[italian,main=english]{babel}
 \RequirePackage{enumitem}
 \setlist[itemize]{leftmargin=1.1em, labelsep=0.5em, itemsep=2pt, topsep=3pt, label={\color{muted}–}}
 
@@ -59,19 +65,19 @@
 % --- Header -------------------------------------------------------------
 % \cvheader{subtitle}
 \newcommand{\cvheader}[1]{%
-  {\display\fontsize{30}{32}\selectfont\color{accent}Vincenzo Di Florio, PhD\par}
+  {\display\fontsize{30}{32}\selectfont\color{accent}Vincenzo Di Florio, Ph.D.\par}
   \vspace{4pt}
   {\large\color{muted}#1\par}
   \vspace{8pt}
   {\small
-   \faMapMarker*\ Genova, Italy\quad
-   \faEnvelope[regular]\ \href{mailto:vincenzo.diflorio@polimi.it}{vincenzo.diflorio@polimi.it}\par
+   \icon{\faMapMarker*}\ Genova, Italy\quad
+   \icon{\faEnvelope[regular]}\ \href{mailto:vincenzo.diflorio@polimi.it}{vincenzo.diflorio@polimi.it}\par
    \vspace{3pt}
-   \faGlobe\ \href{https://vdiflorio.github.io}{vdiflorio.github.io}\quad
-   \faLinkedinIn\ \href{https://linkedin.com/in/vincenzo-di-florio-269b87401}{LinkedIn}\quad
-   \faOrcid\ \href{https://orcid.org/0000-0002-9839-1518}{0000-0002-9839-1518}\quad
-   \faGithub\ \href{https://github.com/vdiflorio}{vdiflorio}\quad
-   \faGraduationCap\ \href{https://scholar.google.com/citations?user=t_W18NgAAAAJ}{Google Scholar}\par}
+   \icon{\faGlobe}\ \href{https://vdiflorio.github.io}{vdiflorio.github.io}\quad
+   \icon{\faLinkedinIn}\ \href{https://linkedin.com/in/vincenzo-di-florio-269b87401}{LinkedIn}\quad
+   \icon{\faOrcid}\ \href{https://orcid.org/0000-0002-9839-1518}{0000-0002-9839-1518}\quad
+   \icon{\faGithub}\ \href{https://github.com/vdiflorio}{vdiflorio}\quad
+   \icon{\faGraduationCap}\ \href{https://scholar.google.com/citations?user=t_W18NgAAAAJ}{Google Scholar}\par}
   \vspace{6pt}}
 
 % --- Entries --------------------------------------------------------------
