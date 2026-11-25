@@ -289,6 +289,12 @@ sviluppato "with its co-authors" (first author dell'articolo), PINN *physics-inf
 tolta la frase ripetuta in Research interests (accademico), "Ph.D." ovunque, sottotitolo industria "Computational
 scientist: numerical methods and scientific software in C++".
 
+**Etichetta (2026-11-25, decisa con Vincenzo):** "Mathematical physicist" al posto di "Computational physicist" nel
+`<title>`, in `og:title`, negli alt dell'immagine social e dentro `og.jpg`; nel CV industria il sottotitolo è
+"Mathematical physicist: numerical methods and scientific software in C++" (l'etichetta è la sua, le parole chiave per
+chi seleziona restano). `og.jpg` rifatta identica cambiando solo la parola; il sorgente ora è in
+`redesign/tools/og.html` (istruzioni nel commento in testa).
+
 **Misure dopo:** `inspect.mjs` 0 FAIL su tutte le pagine (unico WARN "nessun video"); `lint.mjs docs` 0 FAIL 0 WARN;
 `impeccable detect` sulle pagine renderizzate 0 segnalazioni; `verifica-online.sh` sull'anteprima 47 ok, 0 errori;
 PDF ricompilati (accademico 4 pagine, industria 2).
