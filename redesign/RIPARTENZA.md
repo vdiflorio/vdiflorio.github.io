@@ -15,6 +15,9 @@ laboratorio MOX del Dipartimento di Matematica del Politecnico di Milano. Rispon
 2. Controlla lo stato: `git status`, `git log --oneline -10`, branch corrente (deve essere `redesign`).
 3. Dimmi in poche righe a che punto siamo e cosa proponi di fare adesso, poi aspetta il mio ok.
 
+> **Aggiornamento 2026-11-25:** fase 6 chiusa, il sito nuovo è online da `main` / `docs/`. Lo stato qui sotto è
+> quello del 2026-11-09 e serve solo come storia; lo stato attuale è in `piano.md`.
+
 ## Stato al 2026-11-09
 
 - Backup del sito vecchio (tema al-folio): branch `al-folio-backup` e tag `al-folio-final`, già su GitHub.

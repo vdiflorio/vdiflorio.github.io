@@ -315,3 +315,4 @@ PDF ricompilati (accademico 4 pagine, industria 2).
 - 2026-11-09 — Pubblicazioni selezionate cambiate; pagina CV completa; correzione dei margini su tablet; chiuse le decisioni sulla citazione e sulla lingua.
 - 2026-11-09 — Fase 4: figura animata di NextGenPB (decisione, dati, misure).
 - 2026-11-25 — Controllo finale con impeccable: caratteri, tic da IA, CV.
+- 2026-11-25 — Fase 6: sito pubblicato (GitHub Pages da `main` / `docs/`).

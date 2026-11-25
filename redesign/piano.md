@@ -84,7 +84,7 @@ Lo script [tools/verifica-online.sh](tools/verifica-online.sh) controlla in sola
 - [x] Sorgenti dei CV in `cv/` (`cv-academic.tex`, `cv-industry.tex`, stile comune `cv-style.sty`), con l'aspetto del sito; `make` produce `CV.pdf` e `CV_industry.pdf` (vedi `cv/README.md`).
 - [x] Pagina CV in HTML completa, con tutti i contenuti del PDF accademico (2026-11-09; esclusa solo l'autorizzazione al trattamento dei dati, che resta nel PDF).
 - [x] Tablet (768 px): sotto gli 860 px i paragrafi del CV e delle pubblicazioni arrivano al margine destro (prima la pagina CV risultava non centrata, FAIL `off-centre`).
-- [ ] **Anteprima locale + ok di Vincenzo.** (anteprima avviata il 2026-11-09, primo giro di correzioni fatto)
+- [x] **Anteprima locale + ok di Vincenzo** (2026-11-25, dopo il controllo finale).
 
 ### Fase 4 — Immagini e animazioni
 
@@ -96,7 +96,7 @@ Lo script [tools/verifica-online.sh](tools/verifica-online.sh) controlla in sola
       File: `docs/assets/js/ngpb.js`, `docs/assets/js/ngpb-data.js` (generato da `redesign/tools/fase4_3d.py`),
       stile in fondo a `site.css`. Prototipo isolato in `redesign/fase4/` (la variante 2D scartata è stata cancellata).
 - [ ] L'elemento interattivo della direzione scelta (vedi design.md).
-- [ ] Anteprima locale → ok.
+- [x] Anteprima locale → ok (2026-11-25).
 
 ### Fase 5 — Verifica
 
@@ -123,11 +123,20 @@ Fatta il 2026-11-09; dettagli in design.md → "Verifiche finali".
 - [x] `LICENSE`: MIT a nome di Vincenzo Di Florio (al posto di quella di al-folio), con le licenze di terze parti
       (Hanken Grotesk OFL, Zodiak Fontshare, PDB 1BRS CC0).
 - [x] `cv/Makefile` copia i PDF solo in `docs/assets/pdf/`; `README.md` riscritto (sito, CV, pubblicazione); `.gitignore` ripulito.
-- [ ] Merge di `redesign` in `main` (solo dopo l'ok finale in locale). Sarà un fast-forward: `main`, `al-folio-backup` e
-      `al-folio-final` puntano tutti a `e5a646a`, quindi `main` diventa il sito nuovo e `al-folio-backup` resta il vecchio.
-- [ ] Su GitHub: Settings → Pages → *Deploy from a branch* → `main` / `/docs` (passaggio manuale).
-- [ ] Verifica online, Search Console, anteprime social (LinkedIn).
-- [ ] Rollback se serve: Pages di nuovo su `gh-pages` oppure ripristino da `al-folio-backup`.
+- [x] Merge di `redesign` in `main` (2026-11-25): fast-forward `e5a646a` → `476106c`, push di `main` su GitHub. Nessuna
+      esecuzione partita in *Actions* (il vecchio `deploy.yml` non c'è più). Cancellato il branch locale
+      `redesign-prima-di-riscrivere` (copia di sicurezza mai pushata), con l'ok di Vincenzo.
+- [x] Su GitHub: Settings → Pages → *Deploy from a branch* → `main` / `/docs` (fatto da Vincenzo il 2026-11-25;
+      "pages build and deployment" su `main` verde).
+      Sorgente **prima** del cambio (letta da Vincenzo il 2026-11-25): *Deploy from a branch*, branch `gh-pages`,
+      cartella `/ (root)`. Per il rollback si rimette questa.
+- [x] Verifica online (2026-11-25): `verifica-online.sh` 49 ok, 0 errori; `inspect.mjs` sulle pagine pubblicate 0 FAIL;
+      sitemap inviata e indicizzazione richiesta in Search Console, anteprima aggiornata con il Post Inspector di
+      LinkedIn (fatti da Vincenzo).
+- [ ] Rollback, se mai servisse: Pages di nuovo su `gh-pages` / `/ (root)` (immediato) oppure ripristino da
+      `al-folio-backup`. `gh-pages`, `al-folio-backup` e il tag `al-folio-final` restano: se ne riparla tra qualche settimana.
+
+**Fase 6 chiusa il 2026-11-25: il sito nuovo è online su https://vdiflorio.github.io/ .**
 
 ## Indirizzi da mantenere
 
