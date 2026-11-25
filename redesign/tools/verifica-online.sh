@@ -30,6 +30,7 @@ echo "Sito: $BASE"
 echo
 echo "1. Pagine e file che devono rispondere 200"
 for p in / /publications/ /cv/ /teaching/ /repositories/ /projects/ /404.html \
+         /teachings/calculus-1/ /teachings/methods-environmental-engineering/ /teachings/physics-1/ \
          /sitemap.xml /robots.txt /google6eec2dc6df5f6150.html \
          /assets/css/site.css /assets/js/site.js /assets/img/og.jpg /assets/img/favicon.svg \
          /assets/fonts/hanken-grotesk-latin.woff2 /assets/pdf/CV.pdf /assets/pdf/CV_industry.pdf; do
@@ -46,7 +47,9 @@ case "$home" in *'application/ld+json'*) pass "schema.org Person presente" ;; *)
 
 echo
 echo "3. Reindirizzamenti dei vecchi indirizzi"
-for pair in "/teaching/ /#teaching" "/repositories/ /#projects" "/projects/ /#projects"; do
+for pair in "/teaching/ /#teaching" "/repositories/ /#projects" "/projects/ /#projects" \
+            "/teachings/calculus-1/ /#teaching" "/teachings/methods-environmental-engineering/ /#teaching" \
+            "/teachings/physics-1/ /#teaching"; do
   set -- $pair
   case "$(body "$BASE$1")" in *"url=$2"*) pass "$1 -> $2" ;; *) fail "$1 non reindirizza a $2" ;; esac
 done
@@ -73,7 +76,7 @@ done
 
 echo
 echo "7. Pagine che non esistono più (devono dare 404)"
-for p in /questa-pagina-non-esiste/ /blog/ /news/ /books/; do expect 404 "$p"; done
+for p in /questa-pagina-non-esiste/ /blog/ /news/ /books/ /_pages/dropdown/; do expect 404 "$p"; done
 if [ $local_run = 0 ]; then
   case "$(body "$BASE/questa-pagina-non-esiste/")" in *"Page not found"*) pass "la 404 è quella personalizzata" ;; *) fail "la 404 non è quella personalizzata" ;; esac
 else

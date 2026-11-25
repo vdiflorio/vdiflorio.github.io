@@ -135,10 +135,12 @@ Fatta il 2026-11-09; dettagli in design.md → "Verifiche finali".
 | `/publications/` | pubblicazioni |
 | `/cv/` | CV (pagina + PDF) |
 | `/teaching/` | didattica |
+| `/teachings/calculus-1/`, `/teachings/physics-1/`, `/teachings/methods-environmental-engineering/` | redirect a `/#teaching` (erano nella sitemap del sito vecchio; aggiunti il 2026-11-25) |
 | `/repositories/` | software (o redirect alla sezione della home) |
 | `/assets/pdf/CV.pdf`, `/assets/pdf/CV_industry.pdf` | invariati |
 | `/google6eec2dc6df5f6150.html` | invariato |
-| `/books/`, `/blog/`, `/news/`, `/projects/` | eliminati (pagine del template, non linkate) |
+| `/books/`, `/blog/`, `/news/`, `/_pages/dropdown/` | eliminati, danno la 404 (pagine del template, non linkate) |
+| `/projects/` | redirect a `/#projects` |
 
 Il tutorial di NextGenPB (`/nextgenpb_tutorial/`) è un repository separato e non viene toccato.
 

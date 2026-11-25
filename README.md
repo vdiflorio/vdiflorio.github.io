@@ -13,7 +13,7 @@ così com'è.
 | `docs/publications/index.html` | Tutti gli articoli, i talk e i poster |
 | `docs/cv/index.html` | CV completo in HTML e link ai due PDF |
 | `docs/404.html` | Pagina "non trovata" |
-| `docs/teaching/`, `docs/repositories/`, `docs/projects/` | Reindirizzano alle sezioni della home (vecchi indirizzi) |
+| `docs/teaching/`, `docs/teachings/*/`, `docs/repositories/`, `docs/projects/` | Reindirizzano alle sezioni della home (vecchi indirizzi) |
 | `docs/assets/css/site.css`, `docs/assets/js/site.js` | L'unico foglio di stile e l'unico script (tema chiaro/scuro, entrate) |
 | `docs/assets/pdf/` | `CV.pdf` e `CV_industry.pdf`, generati da `cv/` |
 | `docs/sitemap.xml`, `docs/robots.txt`, `docs/google…html` | SEO e verifica di Google Search Console |
